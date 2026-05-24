@@ -240,7 +240,7 @@ Confiabilidade e integridade de dados
 
 Compatibilidade e portabilidade
 
-- APIs REST JSON versionadas (/v1); serviços empacotados em containers OCI.
+- APIs REST JSON versionadas (/api/v1); serviços empacotados em containers OCI.
 
 Compliance
 

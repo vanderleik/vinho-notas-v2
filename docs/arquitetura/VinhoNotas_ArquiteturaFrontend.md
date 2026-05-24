@@ -56,8 +56,9 @@ graph TD
   roteamento, autenticação e orquestração dos MFEs.
 - **MFEs deployáveis de forma independente**: cada MFE tem seu próprio pipeline de
   build e pode ser atualizado sem redeploy dos demais.
-- **Shared libraries, não shared runtime**: código compartilhado vive em libs
-  versionadas, não em dependências implícitas do Shell.
+- **Shared runtime controlado + libs versionadas**: dependências críticas são
+  compartilhadas como singleton via Native Federation com `strictVersion`, e o
+  contrato funcional permanece em bibliotecas versionadas.
 - **Signals sem NgRx**: Angular Signals substituem completamente o NgRx para
   gerenciamento de estado — menos boilerplate, mais legibilidade.
 - **PWA no Shell**: um único Service Worker registrado pelo Shell cobre todos os MFEs.
@@ -288,7 +289,7 @@ sequenceDiagram
     SH  -->> U:  Componente de vinhos renderizado
 
     U   ->> SH:  Requisição HTTP (ex: listar vinhos)
-    SH  ->> BFF: GET /api/vinhos (com JWT no header)
+    SH  ->> BFF: GET /api/v1/vinhos (com JWT no header)
     BFF -->> SH: 200 OK { vinhos }
     SH  -->> U:  Lista de vinhos exibida
 ```
@@ -627,7 +628,7 @@ sequenceDiagram
 
     U    ->> AUTH: submete login (email + senha)
     AUTH ->> SVC:  login(email, senha)
-    SVC  ->> BFF:  POST /api/auth/login
+    SVC  ->> BFF:  POST /api/v1/auth/login
     BFF  -->> SVC: { token, payload }
     SVC  ->> STR:  AuthStore.login(token, payload)
     STR  -->> STR: patchState → autenticado = true
@@ -660,7 +661,7 @@ sequenceDiagram
     alt Menor de 18 anos
         AUTH -->> U: exibe bloqueio legal (sem chamada HTTP)
     else Maior de 18 anos
-        AUTH ->> BFF: POST /api/auth/cadastro
+        AUTH ->> BFF: POST /api/v1/auth/cadastro
         BFF  -->> AUTH: 201 Created { token, payload }
         AUTH ->> STR:  AuthStore.login(token, payload)
         AUTH ->> AUTH: Router.navigate(['/dashboard'])
@@ -839,7 +840,7 @@ graph TD
   "dataGroups": [
     {
       "name": "api-performance",
-      "urls": ["/api/vinhos/**", "/api/dashboard/**"],
+      "urls": ["/api/v1/vinhos/**", "/api/v1/dashboard/**"],
       "cacheConfig": {
         "strategy": "freshness",
         "maxSize": 100,
@@ -849,7 +850,7 @@ graph TD
     },
     {
       "name": "api-critical",
-      "urls": ["/api/auth/**", "/api/degustacoes/**"],
+      "urls": ["/api/v1/auth/**", "/api/v1/degustacoes/**"],
       "cacheConfig": {
         "strategy": "freshness",
         "maxSize": 50,
@@ -1358,15 +1359,15 @@ jobs:
 
 ### Mapa de MFEs, rotas e backends consumidos
 
-| MFE | Rota principal | Portas | Backends consumidos |
+| MFE | Rota principal | Portas | Contratos consumidos no BFF |
 |---|---|---|---|
-| `shell` | `/` | 4200 | Todos (roteamento + PWA) |
-| `mfe-autenticacao` | `/auth` | 4201 | `svc-autenticacao` |
-| `mfe-dashboard` | `/dashboard` | 4205 | `svc-analytics`, `svc-gamificacao`, `svc-adega`, `svc-avaliacao` |
-| `mfe-vinhos` | `/vinhos` | 4202 | `svc-vinho`, `svc-adega` |
-| `mfe-degustacao` | `/degustacao` | 4203 | `svc-avaliacao`, `svc-degustacao` |
-| `mfe-sommelier` | `/sommelier` | 4204 | `svc-ia` |
-| `mfe-perfil` | `/perfil` | 4206 | `svc-perfil`, `svc-gamificacao`, `svc-notificacao` |
+| `shell` | `/` | 4200 | Roteamento e bootstrap PWA |
+| `mfe-autenticacao` | `/auth` | 4201 | `/api/v1/auth/*` |
+| `mfe-dashboard` | `/dashboard` | 4205 | `/api/v1/dashboard/*` |
+| `mfe-vinhos` | `/vinhos` | 4202 | `/api/v1/vinhos/*`, `/api/v1/adega/*` |
+| `mfe-degustacao` | `/degustacao` | 4203 | `/api/v1/avaliacoes/*`, `/api/v1/degustacoes/*` |
+| `mfe-sommelier` | `/sommelier` | 4204 | `/api/v1/sommelier/*` |
+| `mfe-perfil` | `/perfil` | 4206 | `/api/v1/perfil/*`, `/api/v1/notificacoes/*`, `/api/v1/progresso/*` |
 
 ---
 

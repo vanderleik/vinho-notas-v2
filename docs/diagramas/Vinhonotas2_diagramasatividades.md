@@ -91,7 +91,7 @@ flowchart TD
 Detalha o fluxo de registro de um vinho no acervo pessoal, com duas entradas possíveis:
 cadastro manual (formulário) ou escaneamento de rótulo pela câmera. Ao final, o usuário
 pode adicionar a garrafa à adega virtual e o sistema agenda alertas de ponto de consumo ideal.
-Corresponde aos requisitos **FR07–FR13**.
+Corresponde aos requisitos **FR07–FR13, FR41**.
  
 ```mermaid
 flowchart TD
@@ -99,6 +99,16 @@ flowchart TD
  
     S  --> A1["Usuário acessa o menu Vinhos"]
     A1 --> D1{"Como cadastrar?"}
+    D1 -- "Gerenciar vinho existente" --> M1["Abrir lista de vinhos cadastrados"]
+    M1 --> M2["Selecionar vinho para editar ou excluir"]
+    M2 --> M3{"Ação desejada?"}
+    M3 -- "Editar" --> M4["Alterar dados do vinho e salvar"]
+    M3 -- "Excluir" --> M5{"Existem avaliações\nou degustações associadas?"}
+    M5 -- "Sim" --> M6["Exibir aviso de impacto\nantes de confirmar a exclusão"]
+    M5 -- "Não" --> M7["Confirmar exclusão do vinho"]
+    M4 --> F1
+    M6 --> F1
+    M7 --> F1
  
     %% ── Via Scan ────────────────────────────────────
     D1 -- "Escanear rótulo" --> B1["Abrir câmera do dispositivo"]
@@ -126,13 +136,18 @@ flowchart TD
     D4 -- "Sim" --> D5["Informar quantidade de garrafas\ne posição na adega (opcional)"]
     D5 --> D6["Salvar vinho + dados da adega"]
     D4 -- "Não" --> D7["Salvar vinho no acervo"]
+
+    D6 --> W1{"Origem do item\né Wishlist?"}
+    D7 --> W1
+    W1 -- "Sim" --> W2["Mover item da Wishlist\npara a adega virtual"]
+    W2 --> E1
+    W1 -- "Não" --> E1
  
-    D6 --> E1{"Safra e tempo de\nguarda informados?"}
+    E1{"Safra e tempo de\nguarda informados?"}
     E1 -- "Sim" --> E2["Calcular ponto ideal de consumo"]
     E2 --> E3["Agendar alerta de ponto de consumo"]
     E3 --> F1
     E1 -- "Não" --> F1
-    D7 --> F1
  
     F1["Exibir confirmação de cadastro"]
     F1 --> D8{"Deseja adicionar\nà Wishlist?"}
@@ -149,8 +164,8 @@ flowchart TD
  
     class S start
     class E fim
-    class A1,A2,A3,A4,B1,B2,B4,B5,C1,D5,D6,D7,E2,E3,F1,F2 acao
-    class D1,D2,D3,D4,E1,D8 dec
+    class A1,A2,A3,A4,B1,B2,B4,B5,C1,D5,D6,D7,W2,E2,E3,F1,F2 acao
+    class D1,D2,D3,D4,W1,E1,D8 dec
     class B3,C2 erro
 ```
  
@@ -191,6 +206,15 @@ flowchart TD
  
     D3["Salvar avaliação com data e hora"]
     D3  --> D4["Sistema atualiza histórico do vinho"]
+    D4 --> L1{"Deseja gerenciar\na lista de avaliações?"}
+    L1 -- "Sim" --> L2["Abrir tela de avaliações"]
+    L2 --> L3["Listar avaliações por data, nota ou rótulo"]
+    L3 --> L4{"Editar ou excluir?"}
+    L4 -- "Editar" --> L5["Alterar avaliação e salvar"]
+    L4 -- "Excluir" --> L6["Confirmar exclusão da avaliação"]
+    L5 --> E1
+    L6 --> E1
+    L1 -- "Não" --> E1
     D4  --> E1{"Sistema verifica\nconquistas de gamificação"}
     E1  -- "Nova conquista" --> E2["Exibir badge desbloqueado\nAtualizar nível do usuário"]
     E2  --> F1
@@ -210,8 +234,8 @@ flowchart TD
  
     class S start
     class E fim
-    class A1,A2,A3,A4,B2,B3,B4,C1,C2,C3,D3,D4 acao
-    class D1,B1,D2,F1,E1 dec
+    class A1,A2,A3,A4,B2,B3,B4,C1,C2,C3,D3,D4,L2,L3,L5,L6 acao
+    class D1,B1,D2,F1,E1,L1,L4 dec
     class G1 sub
     class E2 gami
 ```
@@ -269,6 +293,17 @@ flowchart TD
  
     G1["Salvar ficha de degustação"]
     G1  --> H1{"Sistema verifica\nconquistas de gamificação"}
+    G1 --> J1{"Deseja gerenciar\nfichas registradas?"}
+    J1 -- "Sim" --> J2["Abrir tela de fichas"]
+    J2 --> J3["Listar fichas com busca e filtros"]
+    J3 --> J4{"Editar, excluir ou exportar?"}
+    J4 -- "Editar" --> J5["Alterar ficha e salvar"]
+    J4 -- "Excluir" --> J6["Confirmar exclusão da ficha"]
+    J4 -- "Exportar" --> J7["Exportar ficha individual em PDF"]
+    J5 --> H1
+    J6 --> H1
+    J7 --> H1
+    J1 -- "Não" --> H1
     H1  -- "Nova conquista" --> H2["Exibir badge e atualizar nível"]
     H2  --> I1
     H1  -- "Sem novidade" --> I1
@@ -288,9 +323,9 @@ flowchart TD
  
     class S start
     class E fim
-    class A1,A2,A3,A4,C1,G1 acao
+    class A1,A2,A3,A4,C1,G1,J2,J3,J5,J6,J7 acao
     class E1,E1A,E1B,E2,E2A,E2B,E3,E3A,E3B,E4,E4A,F1 etapa
-    class D1,D2,D3,I1,H1 dec
+    class D1,D2,D3,I1,H1,J1,J4 dec
     class I2 sub
     class H2 gami
 ```
@@ -379,7 +414,7 @@ flowchart TD
  
 Descreve o fluxo de carregamento e navegação no painel analítico pessoal. O sistema agrega
 dados do acervo, avaliações e adega do usuário para gerar gráficos, rankings e alertas.
-Corresponde aos requisitos **FR28–FR32**.
+Corresponde aos requisitos **FR28–FR32, FR42**.
  
 ```mermaid
 flowchart TD
@@ -399,8 +434,12 @@ flowchart TD
     C1 --> C2["Renderizar gráfico:\ndistribuição por país e uva"]
     C2 --> C3["Renderizar gráfico:\nevolução das notas ao longo do tempo"]
     C3 --> C4["Exibir ranking pessoal\n(Top 5 / Top 10 vinhos)"]
- 
-    C4 --> D2{"Usuário tem adega\ncom safra e tempo de guarda?"}
+    C4 --> C4A{"Marcar favorito\ndo trimestre?"}
+    C4A -- "Sim" --> C4B["Salvar vinho favorito\ncom referência ao período"]
+    C4A -- "Não" --> D2
+    C4B --> D2
+
+    D2{"Usuário tem adega\ncom safra e tempo de guarda?"}
     D2 -- "Sim" --> D3["Calcular pontos de consumo ideal\npara cada vinho da adega"]
     D3 --> D4{"Há vinhos no\npico ou próximos?"}
     D4 -- "Sim" --> D5["Exibir alerta de ponto de consumo"]
@@ -428,8 +467,8 @@ flowchart TD
  
     class S start
     class E fim
-    class A1,A2,B1,B2,C1,C2,C3,C4,D3,E2,F1,F2 acao
-    class D1,D2,D4,E1,D3A dec
+    class A1,A2,B1,B2,C1,C2,C3,C4,C4B,D3,E2,F1,F2 acao
+    class D1,C4A,D2,D4,E1,D3A dec
     class D5 alerta
     class A3 erro
 ```
@@ -539,10 +578,11 @@ flowchart TD
  
     N5  -- "Push" --> N6["Enviar notificação push\npelo service worker do PWA"]
     N5  -- "E-mail" --> N7["Enviar e-mail personalizado\nvia serviço de e-mail"]
-    N5  -- "Ambos" --> N6
+    N5  -- "Ambos" --> N6A["Enviar notificação push"]
+    N6A --> N7A["Enviar e-mail personalizado"]
+    N7A --> N8
     N6  --> N8
     N7  --> N8
-    N6  --> N7
  
     N8["Registrar envio no log\nde notificações"]
     N8  --> E
@@ -561,7 +601,7 @@ flowchart TD
     class A1,A2,N1,N3,N8 acao
     class PA,A3,B1,N2,N4,N5 dec
     class A4,A5,A6,B2,B3,B4,C1 gami
-    class N6,N7 notif
+    class N6,N6A,N7,N7A notif
 ```
  
 ---
@@ -571,11 +611,11 @@ flowchart TD
 | Diagrama | Módulo | Requisitos cobertos | Novidades em relação ao MVP |
 |---|---|---|---|
 | AD-01 | Autenticação e Conta | FR01–FR06 | OAuth Google/Apple, JWT, validação de maioridade |
-| AD-02 | Cadastro de Vinho e Adega | FR07–FR13 | Scan de rótulo por câmera, adega virtual, alerta de ponto de consumo |
+| AD-02 | Cadastro de Vinho e Adega | FR07–FR13, FR41 | Scan de rótulo por câmera, adega virtual, alerta de ponto de consumo e conversão wishlist→adega |
 | AD-03 | Avaliação Rápida | FR14–FR17 | Listas padronizadas, dois sistemas de pontuação, integração com gamificação |
 | AD-04 | Ficha de Degustação Formal | FR18–FR22 | 4 etapas guiadas, degustação comparativa, exportação PDF |
 | AD-05 | Sommelier Virtual / IA | FR23–FR27 | Harmonização por ingredientes, geração de menu, chat contextual, recomendações |
-| AD-06 | Dashboard e Insights | FR28–FR32 | Gráficos de preferências, ranking pessoal, alertas de adega, relatório de gastos |
+| AD-06 | Dashboard e Insights | FR28–FR32, FR42 | Gráficos de preferências, ranking pessoal, favorito do trimestre, alertas de adega, relatório de gastos |
 | AD-07 | Compartilhamento e Exportação | FR33–FR35 | Geração de card visual, exportação CSV/PDF, compartilhamento em redes sociais |
 | AD-08 | Gamificação e Notificações | FR36–FR40 | Sistema de badges, níveis, notificações push e e-mail configuráveis |
  

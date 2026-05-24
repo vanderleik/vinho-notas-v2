@@ -63,7 +63,7 @@ flowchart LR
 
 Abrange o ciclo completo do acervo: cadastro manual ou por escaneamento de rótulo, consulta com filtros avançados, adega virtual com alertas de ponto de consumo ideal e lista de desejos.
 
-**Requisitos:** FR07, FR08, FR09, FR10, FR11, FR12, FR13
+**Requisitos:** FR07, FR08, FR09, FR10, FR11, FR12, FR41
 
 ```mermaid
 flowchart LR
@@ -230,7 +230,7 @@ flowchart LR
 
 Agrupa os módulos transversais: painel analítico com insights de preferências, compartilhamento em redes sociais com geração de cards visuais, exportação de dados, sistema de notificações push/e-mail e programa de gamificação com níveis e conquistas.
 
-**Requisitos:** FR28–FR40
+**Requisitos:** FR28–FR40, FR42
 
 ```mermaid
 flowchart LR
@@ -297,22 +297,22 @@ flowchart LR
 
 | UC | Nome | Módulo | Atores | Requisitos |
 |---|---|---|---|---|
-| UC01 | Autenticar no sistema | Autenticação | Usuário, OAuth | FR01–FR04 |
-| UC02 | Gerenciar perfil | Autenticação | Usuário | FR05–FR06 |
+| UC01 | Autenticar no sistema | Autenticação | Enófilo, Sommelier, Parceiro, OAuth | FR01–FR04 |
+| UC02 | Gerenciar perfil | Autenticação | Enófilo, Sommelier, Parceiro | FR05–FR06 |
 | UC03 | Cadastrar vinho | Vinhos | Enófilo, Sommelier | FR07–FR08 |
 | UC04 | Escanear rótulo por câmera | Vinhos | Enófilo | FR08 |
 | UC05 | Consultar e filtrar vinhos | Vinhos | Enófilo, Sommelier | FR09–FR10 |
 | UC06 | Gerenciar adega virtual | Vinhos | Enófilo, Sommelier | FR11 |
-| UC07 | Gerenciar wishlist | Vinhos | Enófilo | FR12–FR13 |
+| UC07 | Gerenciar wishlist | Vinhos | Enófilo | FR12, FR41 |
 | UC08 | Fazer avaliação rápida | Degustação | Todos | FR14–FR17 |
 | UC09 | Criar ficha de degustação | Degustação | Enófilo, Sommelier | FR18–FR22 |
 | UC10 | Gerenciar degustações | Degustação | Enófilo, Sommelier | FR21–FR22 |
 | UC11 | Consultar harmonizações | IA | Enófilo, IA/LLM | FR23–FR24 |
 | UC12 | Interagir com sommelier virtual | IA | Enófilo, IA/LLM | FR25 |
 | UC13 | Receber recomendações | IA | Enófilo, IA/LLM | FR26–FR27 |
-| UC14 | Visualizar dashboard e insights | Dashboard | Enófilo | FR28–FR32 |
+| UC14 | Visualizar dashboard e insights | Dashboard | Enófilo | FR28–FR32, FR42 |
 | UC15 | Compartilhar avaliação | Compartilhamento | Enófilo | FR33 |
-| UC16 | Exportar dados e fichas | Compartilhamento | Enófilo, Sommelier | FR34–FR35 |
+| UC16 | Exportar dados e fichas | Compartilhamento | Enófilo, Sommelier | FR13, FR34–FR35 |
 | UC17 | Gerenciar notificações | Extras | Todos | FR36–FR37 |
 | UC18 | Acompanhar progresso | Extras | Todos | FR38–FR40 |
 

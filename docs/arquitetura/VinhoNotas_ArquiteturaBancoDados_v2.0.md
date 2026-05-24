@@ -16,7 +16,7 @@
 
 ```mermaid
 graph TD
-    subgraph FRONTEND["Frontend PWA / React"]
+  subgraph FRONTEND["Frontend PWA / Angular 19"]
         FE["🌐 Frontend"]
     end
 

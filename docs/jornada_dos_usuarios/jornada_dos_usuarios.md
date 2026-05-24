@@ -183,6 +183,9 @@ Na vinícola especializada onde compra seus vinhos, André encontra um Naoussa d
 boutique. Escaneia o rótulo, confirma os dados e registra a garrafa na adega com a posição
 física exata na prateleira. Anota no campo de observações: *"Comprado para degustação
 comparativa com Côte-Rôtie 2018 — estilo vs. estrutura"*.
+Antes de concluir o cadastro, o sistema identifica que o Naoussa já estava salvo em sua
+wishlist e oferece a conversão para a adega virtual, reaproveitando as informações já
+preenchidas. André confirma e o item passa a fazer parte do estoque.
  
 No jantar, André apresenta os dois vinhos com uma introdução breve sobre as origens de cada
 um. Enquanto o grupo degusta, ele conduz uma sessão informal guiada pelas etapas da análise
@@ -304,6 +307,8 @@ de uso com a mesma base de funcionalidades.
 | Exportação CSV de inventário | — | — | ✅ | — |
 | Gamificação (badge / nível) | ✅ | — | ✅ | ✅ |
 | Wishlist de vinhos | ✅ | — | — | ✅ |
+| Conversão wishlist -> adega | — | — | ✅ | — |
+| Favorito do trimestre | — | ✅ | — | — |
  
 ---
  

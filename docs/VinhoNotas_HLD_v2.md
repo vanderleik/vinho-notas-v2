@@ -69,9 +69,9 @@ Padrões adotados
 | mfe-autenticacao | Login, cadastro, recuperação de senha e perfil de acesso | BFF, shared-auth |
 | mfe-vinhos | Cadastro, consulta, scan de rótulo, wishlist e adega visual | BFF, shared-models |
 | mfe-degustacao | Avaliação rápida, ficha formal, degustação comparativa e exportação | BFF, shared-models |
-| mfe-sommelier | Chat com IA, harmonização e recomendações | BFF, svc-ia |
-| mfe-dashboard | Resumo, gráficos, ranking e indicadores do usuário | BFF, svc-analytics |
-| mfe-perfil | Dados pessoais, preferências, notificações, conquistas e nível | BFF, svc-perfil, svc-gamificacao |
+| mfe-sommelier | Chat com IA, harmonização e recomendações | BFF, shared-models |
+| mfe-dashboard | Resumo, gráficos, ranking e indicadores do usuário | BFF, shared-models |
+| mfe-perfil | Dados pessoais, preferências, notificações, conquistas e nível | BFF, shared-models |
 | BFF / API Gateway | Validação JWT, rate limiting, circuit breaker, routing, agregação de respostas e propagação de identidade | Spring Cloud Gateway, Redis, Resilience4j, todos os serviços downstream |
 | svc-autenticacao | Cadastro, login, OAuth, refresh token e emissão de JWT | PostgreSQL, OAuth Google/Apple |
 | svc-perfil | Preferências de idioma, tema, pontuação e notificações | PostgreSQL |
@@ -285,7 +285,7 @@ ADRs associados
 
 Decisões pendentes
 
-- Consolidar a fonte de verdade para a stack de frontend, porque documentos legados ainda citam React em diagramas históricos.
+- Garantir que todos os contratos externos no BFF usem o padrão de rotas versionadas /api/v1/*.
 - Fechar SLAs finais por interface e política de retenção LGPD.
 - Formalizar versionamento de contratos OpenAPI e de eventos RabbitMQ.
 

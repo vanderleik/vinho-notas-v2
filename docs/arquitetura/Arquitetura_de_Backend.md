@@ -13,7 +13,7 @@
 ```mermaid
 graph TD
     subgraph CLIENT["Cliente"]
-        FE["🌐 Frontend PWA · React"]
+    FE["🌐 Frontend PWA · Angular 19"]
     end
 
     subgraph GATEWAY["BFF / API Gateway · Spring Cloud Gateway"]
@@ -346,12 +346,12 @@ spring:
       routes:
         - id: svc-autenticacao
           uri: http://svc-autenticacao:8081
-          predicates: [Path=/api/auth/**]
+          predicates: [Path=/api/v1/auth/**]
           filters:  [StripPrefix=1]
 
         - id: svc-vinho
           uri: http://svc-vinho:8083
-          predicates: [Path=/api/vinhos/**]
+          predicates: [Path=/api/v1/vinhos/**]
           filters:
             - StripPrefix=1
             - name: CircuitBreaker
@@ -396,7 +396,7 @@ public class JwtAuthenticationFilter implements GlobalFilter, Ordered {
 ### Agregação reativa — Dashboard (4 serviços em paralelo)
 
 ```java
-@GetMapping("/api/dashboard")
+@GetMapping("/api/v1/dashboard")
 public Mono<DashboardResponse> getDashboard(
         @RequestHeader("X-Usuario-Id") UUID usuarioId) {
 
@@ -656,7 +656,7 @@ sequenceDiagram
     participant GAMI as svc-gamificacao
     participant NOTI as svc-notificacao
 
-    FE   ->>  BFF: POST /api/vinhos
+    FE   ->>  BFF: POST /api/v1/vinhos
     BFF  ->>  VIN: POST /vinhos
     VIN  ->>  VIN: salva tb_vinho + tb_outbox (mesma transação)
     VIN  -->> BFF: 201 Created
@@ -691,7 +691,7 @@ sequenceDiagram
     participant GAMI as svc-gamificacao
     participant NOTI as svc-notificacao
 
-    FE   ->>  BFF: POST /api/degustacoes
+    FE   ->>  BFF: POST /api/v1/degustacoes
     BFF  ->>  DEG: POST /degustacoes
     DEG  ->>  DEG: salva ficha + tb_outbox
     DEG  -->> BFF: 201 Created

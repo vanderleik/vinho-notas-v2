@@ -167,7 +167,7 @@ Camila é uma estudante de gastronomia que descobriu sua paixão por vinhos dura
 
 # **3\. Requisitos Funcionais**
 
-Os requisitos funcionais descrevem as funcionalidades e comportamentos esperados do sistema Vinho Notas versão 2.0. Em relação à versão original do MVP, o número de requisitos funcionais passou de 10 para 40, organizados em 9 módulos temáticos. Essa expansão reflete a evolução da plataforma de um MVP básico para um produto mais completo, moderno e competitivo.
+Os requisitos funcionais descrevem as funcionalidades e comportamentos esperados do sistema Vinho Notas versão 2.0. Em relação à versão original do MVP, o número de requisitos funcionais passou de 10 para 42, organizados em 9 módulos temáticos. Essa expansão reflete a evolução da plataforma de um MVP básico para um produto mais completo, moderno e competitivo.
 
 Cada requisito está associado às personas que mais se beneficiam daquela funcionalidade, permitindo priorização orientada ao usuário durante o planejamento das sprints.
 
@@ -182,7 +182,7 @@ Requisitos relacionados ao acesso, cadastro e gerenciamento da conta do usuário
 | **FR03** | O sistema deve permitir que o usuário faça login com e-mail e senha ou através dos provedores de autenticação social configurados. Deve existir a opção de recuperação de senha por e-mail.                                                                              | _Todos_                          |
 | **FR04** | O sistema deve bloquear o acesso de usuários menores de 18 anos, realizando a validação da data de nascimento durante o cadastro e exibindo uma mensagem de impedimento quando necessário.                                                                               | _Todos_                          |
 | **FR05** | O sistema deve disponibilizar uma tela de perfil onde o usuário pode visualizar e editar seus dados pessoais, preferências de notificação, idioma e tema (claro/escuro).                                                                                                 | _Todos_                          |
-| **FR06** | O sistema deve suportar os perfis: Enófilo (acesso gratuito a todas as funcionalidades da versão 1.0), Sommelier (acesso profissional, com ferramentas avançadas, mediante parceria) e Parceiro (vinícola, e-commerce ou importador, com acesso a relatórios agregados). | _Ricardo, André_                 |
+| **FR06** | O sistema deve suportar os perfis: Enófilo (acesso gratuito a todas as funcionalidades da versão 1.0), Sommelier (acesso profissional, com ferramentas avançadas, mediante parceria) e Parceiro (vinícola, importador ou curador especializado, com acesso a relatórios agregados e sem operações de compra/venda dentro da plataforma). | _Ricardo, André_                 |
 
 ## **3.2 Módulo: Gestão de Vinhos**
 
@@ -197,6 +197,7 @@ Requisitos relacionados ao cadastro, consulta, organização e manutenção do a
 | **FR11** | O sistema deve oferecer uma funcionalidade de adega virtual, onde o usuário pode informar a quantidade de garrafas disponíveis de cada vinho e, opcionalmente, a posição física na adega (prateleira/coluna). O sistema deve exibir um painel da adega organizado visualmente.                                                                                                       | _Ricardo, André_          |
 | **FR12** | O usuário deve poder criar uma lista de desejos (wishlist) com vinhos que deseja provar futuramente, podendo adicionar observações e uma estimativa de preço.                                                                                                                                                                                                                        | _Marina, Camila, Ricardo_ |
 | **FR13** | O sistema deve permitir ao usuário exportar a lista de vinhos cadastrados em formato CSV ou PDF, para fins de backup e referência.                                                                                                                                                                                                                                                   | _Ricardo, André_          |
+| **FR41** | O sistema deve permitir mover um item da wishlist para a adega virtual, reaproveitando os dados já registrados e solicitando apenas os campos específicos de estoque (quantidade e posição física opcional).                                                                                                                                                                           | _Marina, Camila, Ricardo_ |
 
 ## **3.3 Módulo: Avaliação Rápida**
 
@@ -242,6 +243,7 @@ Requisitos relacionados à visualização consolidada dos dados do usuário. O d
 | **FR28** | O sistema deve exibir um painel inicial (dashboard) com um resumo das atividades recentes do usuário: últimas degustações, últimas avaliações, número de vinhos na adega e destaques do histórico.                              | _Todos_          |
 | **FR29** | O dashboard deve apresentar gráficos e indicadores estatísticos das preferências do usuário: distribuição por tipo de vinho, por país de origem, por uva, por faixa de preço e evolução das notas atribuídas ao longo do tempo. | _Ricardo, André_ |
 | **FR30** | O sistema deve exibir os vinhos mais bem avaliados pelo usuário (Top 5 ou Top 10), funcionando como um ranking pessoal de referência.                                                                                           | _Todos_          |
+| **FR42** | O sistema deve permitir que o usuário marque um vinho do seu ranking pessoal como favorito do trimestre, armazenando a seleção com referência ao período e exibindo o destaque no dashboard.                                                                        | _Ricardo, André_ |
 | **FR31** | O sistema deve permitir o registro do valor pago por cada garrafa e exibir relatórios de gasto por período (mensal/anual), acompanhados de gráficos de evolução.                                                                | _André, Ricardo_ |
 | **FR32** | Para vinhos cadastrados na adega com informação de tempo de guarda e safra, o sistema deve calcular e exibir uma estimativa do período ideal de consumo e alertar quando um vinho estiver próximo do seu pico.                  | _André_          |
 
@@ -311,16 +313,16 @@ O quadro a seguir apresenta o mapeamento dos principais casos de uso identificad
 | **UC04** | Escanear rótulo de vinho             | _Enófilo_            | FR08                         |
 | **UC05** | Consultar e filtrar vinhos           | _Todos os usuários_  | FR09, FR10                   |
 | **UC06** | Gerenciar adega virtual              | _Enófilo, Sommelier_ | FR11                         |
-| **UC07** | Gerenciar wishlist de vinhos         | _Todos os usuários_  | FR12                         |
+| **UC07** | Gerenciar wishlist de vinhos         | _Todos os usuários_  | FR12, FR41                   |
 | **UC08** | Fazer avaliação rápida de vinho      | _Todos os usuários_  | FR14, FR15, FR16             |
 | **UC09** | Criar ficha de degustação            | _Enófilo, Sommelier_ | FR18, FR19, FR20             |
 | **UC10** | Gerenciar degustações                | _Todos os usuários_  | FR21, FR22                   |
 | **UC11** | Consultar harmonizações por IA       | _Todos os usuários_  | FR23, FR24, FR27             |
 | **UC12** | Interagir com sommelier virtual      | _Todos os usuários_  | FR25                         |
 | **UC13** | Receber recomendações personalizadas | _Todos os usuários_  | FR26                         |
-| **UC14** | Visualizar dashboard e insights      | _Todos os usuários_  | FR28, FR29, FR30, FR31, FR32 |
+| **UC14** | Visualizar dashboard e insights      | _Todos os usuários_  | FR28, FR29, FR30, FR31, FR32, FR42 |
 | **UC15** | Compartilhar avaliação nas redes     | _Todos os usuários_  | FR33                         |
-| **UC16** | Exportar dados e fichas              | _Enófilo, Sommelier_ | FR34, FR35                   |
+| **UC16** | Exportar dados e fichas              | _Enófilo, Sommelier_ | FR13, FR34, FR35             |
 | **UC17** | Gerenciar notificações               | _Todos os usuários_  | FR36, FR37                   |
 | **UC18** | Acompanhar progresso e conquistas    | _Todos os usuários_  | FR38, FR39, FR40             |
 
@@ -331,7 +333,7 @@ O quadro abaixo resume as principais evoluções entre o MVP original (v1.0) e a
 | **Dimensão**               | **MVP - v1.0**            | **Reformulado - v2.0**                     |
 | -------------------------- | ------------------------- | ------------------------------------------ |
 | **Personas**               | 3 personas                | **4 personas (inclui Geração Z)**          |
-| **Req. Funcionais**        | 10 requisitos, 4 módulos  | **40 requisitos, 9 módulos**               |
+| **Req. Funcionais**        | 10 requisitos, 4 módulos  | **42 requisitos, 9 módulos**               |
 | **Req. Não Funcionais**    | 5 requisitos              | **18 requisitos**                          |
 | **Casos de Uso**           | 4 diagramas UC            | **18 casos de uso mapeados**               |
 | **Autenticação**           | E-mail e senha numérica   | **OAuth (Google/Apple) + JWT**             |
