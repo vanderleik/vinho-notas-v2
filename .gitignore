@@ -21,3 +21,4 @@ old
 /backend/svc-notificacao/.mvn
 /backend/svc-analytics/.mvn
 frontend/shell/package-lock.json
+frontend/mfe-autenticacao/package-lock.json
