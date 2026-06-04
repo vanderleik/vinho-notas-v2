@@ -27,3 +27,4 @@ frontend/mfe-degustacao/package-lock.json
 frontend/mfe-sommelier/package-lock.json
 frontend/mfe-dashboard/package-lock.json
 frontend/mfe-perfil/package-lock.json
+frontend/shared-auth/package-lock.json
