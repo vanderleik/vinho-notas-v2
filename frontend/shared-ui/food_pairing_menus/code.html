@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "outline": "#877270",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "error-container": "#ffdad6",
+                        "on-tertiary-fixed": "#1b1d0e",
+                        "on-secondary-fixed": "#101e1e",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-fixed-dim": "#c8c8b0",
+                        "secondary": "#536161",
+                        "outline-variant": "#dac1bf",
+                        "surface-bright": "#fbfbe2",
+                        "error": "#ba1a1a",
+                        "secondary-fixed-dim": "#bac9c9",
+                        "on-primary-fixed-variant": "#77302d",
+                        "surface-container": "#efefd7",
+                        "on-primary-fixed": "#3d0506",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-tint": "#954742",
+                        "on-tertiary-container": "#8c8d78",
+                        "on-surface": "#1b1d0e",
+                        "on-background": "#1b1d0e",
+                        "surface-dim": "#dbdcc3",
+                        "primary-fixed": "#ffdad7",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#4a0e0e",
+                        "on-surface-variant": "#544341",
+                        "surface-variant": "#e4e4cc",
+                        "tertiary-fixed": "#e4e4cc",
+                        "on-tertiary-fixed-variant": "#474836",
+                        "on-secondary-container": "#596767",
+                        "secondary-fixed": "#d6e6e5",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e4e4cc",
+                        "on-primary-container": "#cc726d",
+                        "surface-container-high": "#eaead1",
+                        "primary": "#2a0002",
+                        "tertiary": "#0f1104",
+                        "inverse-on-surface": "#f2f2d9",
+                        "on-secondary-fixed-variant": "#3b4949",
+                        "tertiary-container": "#242616",
+                        "secondary-container": "#d6e6e5",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#303221",
+                        "background": "#fbfbe2",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-container-low": "#f5f5dc",
+                        "surface": "#fbfbe2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .editorial-shadow {
+            box-shadow: 0 12px 32px rgba(74, 14, 14, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#F5F5DC]/70 backdrop-blur-xl shadow-[0_12px_32px_rgba(74,14,14,0.08)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<span class="text-2xl font-bold italic text-[#4A0E0E] font-headline tracking-tight">Réserve Privée</span>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#536161] hover:text-[#4A0E0E] transition-colors duration-300 font-noto-serif" href="#">Dashboard</a>
+<a class="text-[#536161] hover:text-[#4A0E0E] transition-colors duration-300 font-noto-serif" href="#">Scanner</a>
+<a class="text-[#536161] hover:text-[#4A0E0E] transition-colors duration-300 font-noto-serif" href="#">Cellar</a>
+<a class="text-[#536161] hover:text-[#4A0E0E] transition-colors duration-300 font-noto-serif" href="#">Social</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#4A0E0E] scale-95 transition-transform duration-200">search</button>
+<button class="material-symbols-outlined text-[#4A0E0E] scale-95 transition-transform duration-200">account_circle</button>
+</div>
+</div>
+</nav>
+<div class="flex min-h-screen pt-20">
+<!-- SideNavBar (Hidden on small screens) -->
+<aside class="hidden lg:flex flex-col h-screen w-64 fixed left-0 bg-[#F5F5DC] py-8 font-noto-serif text-lg">
+<div class="px-8">
+<h1 class="text-3xl font-black text-[#4A0E0E] mb-2">Réserve Privée</h1>
+<p class="text-sm text-secondary mb-8">Grand Cru Member</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-4 text-[#536161] pl-8 py-3 hover:bg-[#FBFBE2] transition-all ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-[#536161] pl-8 py-3 hover:bg-[#FBFBE2] transition-all ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined">qr_code_scanner</span>
+<span>Scanner</span>
+</a>
+<a class="flex items-center gap-4 text-[#536161] pl-8 py-3 hover:bg-[#FBFBE2] transition-all ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined">wine_bar</span>
+<span>My Cellar</span>
+</a>
+<a class="flex items-center gap-4 bg-[#FFFFFF] text-[#4A0E0E] rounded-l-full ml-4 pl-4 py-3 font-bold transition-all ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span>Pairing</span>
+</a>
+<a class="flex items-center gap-4 text-[#536161] pl-8 py-3 hover:bg-[#FBFBE2] transition-all ease-in-out duration-300" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span>Community</span>
+</a>
+</nav>
+<div class="px-6 mt-auto">
+<button class="w-full bg-primary-container text-on-primary py-4 rounded-full font-bold shadow-lg hover:opacity-90 transition-opacity">
+                    Add New Vintage
+                </button>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 lg:ml-64 px-6 md:px-12 py-12 max-w-7xl mx-auto">
+<!-- Hero Section / Header -->
+<section class="relative mb-20">
+<div class="flex flex-col md:flex-row items-end gap-8">
+<div class="md:w-3/5 z-10">
+<h2 class="font-headline text-5xl md:text-7xl font-bold text-primary tracking-tight leading-none mb-6">
+                            The Culinary <br/><span class="italic font-normal">Synthesis</span>
+</h2>
+<p class="font-body text-xl text-secondary max-w-md leading-relaxed">
+                            Discover the perfect dialogue between your private cellar and artisanal cuisine. 
+                        </p>
+</div>
+<div class="md:w-2/5 relative">
+<div class="aspect-[4/5] bg-surface-container overflow-hidden rounded-xl editorial-shadow rotate-3 translate-y-4">
+<img class="w-full h-full object-cover" data-alt="Close-up of a perfectly seared steak with rosemary sprig on a dark ceramic plate, warm atmospheric lighting, moody fine dining aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBS7MOthlgdMK2piakik7uLdmEGL-Cq8_chOyeKpO9DzkU0KGjWymUxpSR66C99OE5RJrC0AG4Px7Yaf6npR-GgOSPVxFNBC23ncXr-pKT5g5VK-FWFwXNrcbd3nDrHh9ZDTzVH3c79B8Yvca_j7gl3IcgLIVmWe3nbGXRAaCVEeTKjBIP98h8uJ0ckvXCOMPjLGczQdXh5TFd38-y9xOXQjX6krMUe19wn9BMdE_7IS-lKu5J_Fffo7tnHCmM0NBBzg7UUJJjs5V-"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Pairing Assistant Bento Grid -->
+<section class="mb-24">
+<div class="flex items-center justify-between mb-10">
+<div class="space-y-1">
+<h3 class="font-headline text-3xl font-bold text-on-surface">Pairing Assistant</h3>
+<p class="text-on-surface-variant">Select from your inventory for expert harmony</p>
+</div>
+<button class="text-primary font-bold flex items-center gap-2 hover:gap-3 transition-all">
+                        View Inventory <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[600px]">
+<!-- Main Selector Card -->
+<div class="md:col-span-4 bg-surface-container-lowest p-8 rounded-xl editorial-shadow flex flex-col">
+<label class="text-xs uppercase tracking-widest text-secondary font-bold mb-4">Active Selection</label>
+<div class="flex-1">
+<div class="aspect-square bg-surface-container-low mb-6 rounded-lg overflow-hidden flex items-center justify-center">
+<img class="w-full h-full object-cover" data-alt="Exquisite glass of red wine being poured against a soft-focus background of a wine cellar, rich deep colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd3-Jo7UyE99Gr6AqNlTkCaZLwYwUzGQMEIRqa5IjX5NYEigfKBvP09snXZVuTCB2eZSQUx1GY9jYh5C50YCedhdIcUpiwg45IYzNysfw0SllcNk9iS-3JsvXnuV6nhbb7-IQYz71fHBX5L5I9mgXCfg1VFnH0HJjoCgc5ncgs_jLYxJI-E1zI3oviUZS-lOwZgyeg_ixT2ZIYONqtD1SnE3JmRdMbX5CuplLsPLS0rFDDI-P3it_tGnsqyVi6WhBXt93LVyKib0xi"/>
+</div>
+<h4 class="font-headline text-2xl font-bold mb-2">Château Margaux 2015</h4>
+<p class="text-secondary text-sm mb-6">Bordeaux Blend • 14.5% ABV</p>
+</div>
+<button class="w-full border border-outline-variant py-3 rounded-full text-primary font-semibold hover:bg-surface-container-low transition-colors">
+                            Change Vintage
+                        </button>
+</div>
+<!-- Recommendation Results -->
+<div class="md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-between group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="space-y-4">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-tighter">Entrée Choice</span>
+<h5 class="font-headline text-xl font-bold">Wagyu Beef Carpaccio</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">Enhanced by the wine's structured tannins and dark fruit profile. Shaved truffles add an earthy bridge.</p>
+</div>
+<div class="mt-6 aspect-video overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Elegantly plated wagyu beef carpaccio with microgreens and truffle oil on a white plate, high-end food styling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2e0NUhTXK0egJvvQ4C7oBwNDPUTLsAG_PKp8xDpKYjNs_X_9qh_RioOCZhOeJZbQ-NGkEu6QZO49KX7LXtqmL3XbqoC9u_3X2GPiZIiOyDEPLIunHvoESmv8br7ISXYJTpxyVdydVU3ftVLyBlJ5pbn6sj3nZbDMlN09EMcGMjx-jl7TYn8RvjraJ33sqIXTPrErkzSgXqBApp7pgvmudW_0KYCdx5n9yidWh9lYlaqJ9QQpX0V1P6oTKm5R41pHPYraPNpzCG4pS"/>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col justify-between group cursor-pointer hover:bg-surface-container transition-colors">
+<div class="space-y-4">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-[10px] uppercase font-bold tracking-tighter">Cheese Board</span>
+<h5 class="font-headline text-xl font-bold">Aged Comté &amp; Roquefort</h5>
+<p class="text-on-surface-variant text-sm leading-relaxed">The high acidity and velvet finish of the 2015 vintage cuts through the richness of matured hard cheeses.</p>
+</div>
+<div class="mt-6 aspect-video overflow-hidden rounded-lg">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Artisanal cheese platter with honey, nuts, and grapes on a rustic wooden board, natural lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_uvbFZmsUB_2uKkOxJkGWUtXPgDIBXCqTucg9pNzl1kt705PdUC0f-GXdCyn94Y_ywk4CYD13ofXPiMRpGAOEIHhEFPSXz4kyVV5IunIZMbNcTxG_Nco5HDl3aUEQFGkiw87aSNlTatn3mHvVscNJmfaugtV4jGdA0IahCTtZsYeq5e0vTAVfqIukhHkCkTgy9UWS9BJpRGXRFo0RpjcmNLNBCIYavk-C0cNOauZFiUHM-wB7kuswzU_vVDgHVVzLg8igS1PVy-48"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Chef's Suggested Menus -->
+<section class="mb-20">
+<div class="mb-10 text-center">
+<h3 class="font-headline text-4xl font-bold mb-4">Chef's Suggested Menus</h3>
+<p class="text-secondary italic">Curated seasonal experiences for the discerning palate</p>
+</div>
+<div class="space-y-12">
+<!-- Menu Item 1: Coastal Harmony -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-12 items-center">
+<div class="md:col-span-7 rounded-2xl overflow-hidden editorial-shadow">
+<div class="h-[450px] relative">
+<img class="w-full h-full object-cover" data-alt="Exotic seafood cocktail in a crystal glass on a beach-side terrace table, bright summer lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtYM9FRYenMv1vNMsVJuTckhZ8f9XkWavtrnqiPsALdud6HwEE3vTGkLB5UHg0qKDPAJ_glQH3g5g7VKGwpI5tBGb058D7HB1BIzuy-LKdqLeWeYQVOiOvDEFxoZ50BVEE5UM7TGox_O60F1VoUbRzDn5P8wo_iY-xESBCmqqRSSQwgySCRejmgYktiUuGG4h_WFSixUUigO56X4p8MVw-9MkHA_H9sYqQXK30T9us1_5qB4mY0S3NKkKM9ajMalTty0c5F6lyj2SP"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-8 left-8 text-white">
+<span class="text-xs uppercase tracking-widest mb-2 block opacity-80">Seasonal Feature</span>
+<h4 class="text-3xl font-headline font-bold">The Coastal White Menu</h4>
+</div>
+</div>
+</div>
+<div class="md:col-span-5 py-8 md:py-0">
+<ul class="space-y-8 border-l-2 border-primary/20 pl-8">
+<li>
+<span class="text-[10px] font-bold text-primary uppercase block mb-1">Amuse-Bouche</span>
+<h6 class="font-headline text-xl font-bold">Oysters with Mignonette</h6>
+<p class="text-sm text-secondary">Pairing: Champagne Blanc de Blancs</p>
+</li>
+<li>
+<span class="text-[10px] font-bold text-primary uppercase block mb-1">Main Course</span>
+<h6 class="font-headline text-xl font-bold">Wild-Caught Seabass</h6>
+<p class="text-sm text-secondary">Pairing: Aged Chablis Premier Cru</p>
+</li>
+<li>
+<span class="text-[10px] font-bold text-primary uppercase block mb-1">Finale</span>
+<h6 class="font-headline text-xl font-bold">Lemon Meringue Tarte</h6>
+<p class="text-sm text-secondary">Pairing: Late Harvest Riesling</p>
+</li>
+</ul>
+<button class="mt-10 px-8 py-3 bg-surface-container-highest text-primary font-bold rounded-full hover:bg-surface-variant transition-all">
+                                View Full Recipes
+                            </button>
+</div>
+</div>
+<!-- Menu Item 2: Terroir & Forest (Reversed) -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-12 items-center">
+<div class="md:col-span-5 order-2 md:order-1 py-8 md:py-0 text-right">
+<ul class="space-y-8 border-r-2 border-primary/20 pr-8">
+<li>
+<span class="text-[10px] font-bold text-primary uppercase block mb-1">Starter</span>
+<h6 class="font-headline text-xl font-bold">Porcini Mushroom Risotto</h6>
+<p class="text-sm text-secondary">Pairing: Piedmontese Nebbiolo</p>
+</li>
+<li>
+<span class="text-[10px] font-bold text-primary uppercase block mb-1">Main</span>
+<h6 class="font-headline text-xl font-bold">Herb-Crusted Venison</h6>
+<p class="text-sm text-secondary">Pairing: Napa Valley Cabernet Sauvignon</p>
+</li>
+<li>
+<span class="text-[10px] font-bold text-primary uppercase block mb-1">Dessert</span>
+<h6 class="font-headline text-xl font-bold">Dark Chocolate Ganache</h6>
+<p class="text-sm text-secondary">Pairing: 20-Year-Old Tawny Port</p>
+</li>
+</ul>
+<button class="mt-10 px-8 py-3 bg-surface-container-highest text-primary font-bold rounded-full hover:bg-surface-variant transition-all">
+                                Reserve Ingredients
+                            </button>
+</div>
+<div class="md:col-span-7 order-1 md:order-2 rounded-2xl overflow-hidden editorial-shadow">
+<div class="h-[450px] relative">
+<img class="w-full h-full object-cover" data-alt="Rustic dinner table set with dark wood, earthenware plates, and forest-inspired floral arrangements, moody and elegant" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi1HPth4RVUOpogSnGznbc0C7P-dwWVhOjQdKqwh3I9546aKECjizQH-YHlnCPNdCxv7tJNC1wReTILsEFtYr8R9NjHW7sw60aPloEq0xFT94eF577Sj_zfqROMx95mDwHeAtT0jN0tUw-0KmGGWvZi4bmoNgtDhm_Ax5KJT2EgaQly37BrSsjLrPBnQZIg9h3vbKUINHP7QiG1OS2A9tgjBBYfffibGFaAsIn0RTH6Q-M3QpqfY16qymMotasxiM2D1TqJwHKiHXQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-8 right-8 text-white text-right">
+<span class="text-xs uppercase tracking-widest mb-2 block opacity-80">Winter Tasting</span>
+<h4 class="text-3xl font-headline font-bold">The Terroir Collection</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Vintage Picker (Signature Component) -->
+<section class="bg-surface-dim rounded-2xl p-10 mb-20">
+<div class="max-w-2xl mx-auto text-center mb-8">
+<h4 class="font-headline text-2xl font-bold mb-4">Sommelier's Vintage Filter</h4>
+<p class="text-secondary text-sm">Narrow your pairing search by peak aging years</p>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x">
+<button class="snap-center flex-shrink-0 px-8 py-3 bg-secondary-container text-on-secondary-container rounded-full font-bold">2010</button>
+<button class="snap-center flex-shrink-0 px-8 py-3 bg-secondary-container text-on-secondary-container rounded-full font-bold">2012</button>
+<button class="snap-center flex-shrink-0 px-8 py-3 bg-primary text-on-primary rounded-full font-bold shadow-lg">2015</button>
+<button class="snap-center flex-shrink-0 px-8 py-3 bg-secondary-container text-on-secondary-container rounded-full font-bold">2016</button>
+<button class="snap-center flex-shrink-0 px-8 py-3 bg-secondary-container text-on-secondary-container rounded-full font-bold">2018</button>
+<button class="snap-center flex-shrink-0 px-8 py-3 bg-secondary-container text-on-secondary-container rounded-full font-bold">2019</button>
+<button class="snap-center flex-shrink-0 px-8 py-3 bg-secondary-container text-on-secondary-container rounded-full font-bold">2020</button>
+<button class="snap-center flex-shrink-0 px-8 py-3 bg-secondary-container text-on-secondary-container rounded-full font-bold">2021</button>
+</div>
+</section>
+</main>
+</div>
+<!-- Floating Action Button (Suppressed on this transactional-focused screen as per instructions, but let's assume it belongs on the Dashboard/Home instead) -->
+<!-- Footer / Mobile Nav -->
+<footer class="md:hidden fixed bottom-0 w-full bg-white/80 backdrop-blur-lg px-6 py-4 flex justify-around items-center z-50">
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] uppercase font-bold">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+<span class="text-[10px] uppercase font-bold">Pairing</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined">wine_bar</span>
+<span class="text-[10px] uppercase font-bold">Cellar</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-secondary">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] uppercase font-bold">Profile</span>
+</button>
+</footer>
+</body></html>

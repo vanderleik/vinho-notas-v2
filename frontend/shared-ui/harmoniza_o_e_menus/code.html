@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-primary-fixed": "#3d0506",
+                    "background": "#fcf9f3",
+                    "surface-container": "#f0eee8",
+                    "secondary-fixed": "#e4e2e1",
+                    "on-surface": "#1c1c18",
+                    "surface-tint": "#954742",
+                    "tertiary-fixed": "#ffdcc0",
+                    "on-primary-fixed-variant": "#77302d",
+                    "tertiary": "#1d0c00",
+                    "primary-fixed": "#ffdad7",
+                    "on-secondary-container": "#656464",
+                    "on-error-container": "#93000a",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#31312d",
+                    "surface-container-highest": "#e5e2dc",
+                    "secondary-container": "#e4e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "error-container": "#ffdad6",
+                    "surface-container-high": "#ebe8e2",
+                    "primary": "#2a0002",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-container": "#36200a",
+                    "on-error": "#ffffff",
+                    "on-primary-container": "#cc726d",
+                    "on-background": "#1c1c18",
+                    "on-surface-variant": "#544341",
+                    "tertiary-fixed-dim": "#e6bf9e",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "surface-variant": "#e5e2dc",
+                    "on-tertiary-fixed": "#2b1703",
+                    "on-primary": "#ffffff",
+                    "surface-container-low": "#f6f3ed",
+                    "inverse-on-surface": "#f3f0ea",
+                    "on-secondary-fixed": "#1b1c1c",
+                    "secondary": "#5f5e5e",
+                    "surface": "#fcf9f3",
+                    "secondary-fixed-dim": "#c8c6c5",
+                    "outline-variant": "#dac1bf",
+                    "error": "#ba1a1a",
+                    "inverse-primary": "#ffb3ad",
+                    "surface-bright": "#fcf9f3",
+                    "outline": "#877270",
+                    "surface-dim": "#dcdad4",
+                    "on-tertiary-container": "#a88568",
+                    "on-tertiary-fixed-variant": "#5c4128",
+                    "primary-container": "#4a0e0e",
+                    "on-secondary-fixed-variant": "#474747"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": ["Noto Serif"],
+                    "body": ["Manrope"],
+                    "label": ["Manrope"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .font-noto-serif { font-family: 'Noto Serif', serif; }
+        .font-manrope { font-family: 'Manrope', sans-serif; }
+        .glass-effect {
+            background: rgba(252, 249, 243, 0.8);
+            backdrop-filter: blur(16px);
+        }
+        .wine-gradient {
+            background: linear-gradient(135deg, #4A0E0E 0%, #2A0002 100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-manrope selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopNavBar - Fixed for navigation access -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-effect shadow-sm">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="font-noto-serif text-2xl font-normal tracking-tighter text-[#4A0E0E]">Réserve Privée</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-stone-500 hover:text-[#4A0E0E] transition-colors font-noto-serif text-sm tracking-wider uppercase" href="#">Dashboard</a>
+<a class="text-stone-500 hover:text-[#4A0E0E] transition-colors font-noto-serif text-sm tracking-wider uppercase" href="#">Scanner</a>
+<a class="text-stone-500 hover:text-[#4A0E0E] transition-colors font-noto-serif text-sm tracking-wider uppercase" href="#">Adega</a>
+<a class="text-stone-500 hover:text-[#4A0E0E] transition-colors font-noto-serif text-sm tracking-wider uppercase" href="#">Social</a>
+</nav>
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-stone-500 cursor-pointer hover:opacity-80 transition-opacity">notifications</span>
+<span class="material-symbols-outlined text-stone-500 cursor-pointer hover:opacity-80 transition-opacity">settings</span>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-12 px-8 max-w-screen-xl mx-auto">
+<!-- Hero Section: Editorial Header -->
+<section class="mb-16 mt-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-7">
+<span class="text-primary-container font-label text-xs tracking-[0.2em] uppercase mb-4 block">Sommelier Inteligente</span>
+<h1 class="font-headline text-5xl md:text-7xl text-primary leading-tight">A Síntese <br/>Culinária</h1>
+<p class="mt-6 text-on-surface-variant text-lg max-w-md font-body leading-relaxed">
+                        A arte de elevar o paladar através do encontro perfeito entre a adega e a gastronomia de elite.
+                    </p>
+</div>
+<div class="md:col-span-5 hidden md:block">
+<div class="relative overflow-hidden h-64 w-full bg-surface-container-highest rounded-lg">
+<img class="object-cover w-full h-full opacity-90" data-alt="Close-up artistic shot of wine pouring into a crystal glass with soft dramatic lighting and deep burgundy tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHqlOjSuFoG706hSeuV6X8g_44fXl0vUfRamXwddRiVa3kVLNXSSz91FVtWzMgMnbf1B2n_k2QZ2vZyOpjUre15w4a8AgO6QReOqEy134HHErPA48BQiK77q--b5cSPeBXq1WBw1arjPJe6Uo4SvmlyxP7oDAziT804maWaPnyaPPfszf6YFpWx1XLc6Y8eZm3mjR2gPY8uIg_9Wo2mOZG6ZR1HFVK9NM7ibm1N_0RgTJZLuXUqGTq_QMmjscgn1jmpRJOupr0Pqwf"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid: Tools and Interaction -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+<!-- Search & Filter Card -->
+<div class="md:col-span-2 bg-surface-container-low p-10 rounded-xl relative overflow-hidden group">
+<div class="relative z-10 h-full flex flex-col">
+<h2 class="font-headline text-2xl text-primary mb-8">Encontre a Harmonização</h2>
+<div class="space-y-6">
+<div class="relative border-b border-outline-variant/30 pb-2">
+<label class="block text-secondary font-label text-[10px] uppercase tracking-widest mb-1">Ingrediente ou Prato</label>
+<input class="w-full bg-transparent border-none p-0 focus:ring-0 text-xl text-primary placeholder:text-stone-300 font-body" placeholder="Ex: Carpaccio de Wagyu" type="text"/>
+</div>
+<div class="flex flex-wrap gap-2 pt-4">
+<span class="bg-surface-container-highest text-primary font-label text-[11px] px-4 py-1.5 rounded-full cursor-pointer hover:bg-primary hover:text-white transition-all">Carnes Nobres</span>
+<span class="bg-primary-container text-white font-label text-[11px] px-4 py-1.5 rounded-full cursor-pointer">Queijos Maturados</span>
+<span class="bg-surface-container-highest text-primary font-label text-[11px] px-4 py-1.5 rounded-full cursor-pointer hover:bg-primary hover:text-white transition-all">Trufas Brancas</span>
+<span class="bg-surface-container-highest text-primary font-label text-[11px] px-4 py-1.5 rounded-full cursor-pointer hover:bg-primary hover:text-white transition-all">Frutos do Mar</span>
+</div>
+</div>
+<div class="mt-auto pt-10">
+<button class="wine-gradient text-white px-8 py-3 rounded-md font-label text-sm tracking-widest uppercase hover:opacity-90 transition-opacity">Consultar Adega</button>
+</div>
+</div>
+<div class="absolute -right-20 -bottom-20 opacity-5 group-hover:scale-110 transition-transform duration-700">
+<span class="material-symbols-outlined text-[300px]" style="font-variation-settings: 'FILL' 1;">restaurant_menu</span>
+</div>
+</div>
+<!-- Suggestion Card (Wine Focus) -->
+<div class="bg-surface-container-highest p-8 rounded-xl flex flex-col justify-between">
+<div>
+<h3 class="font-headline text-xl text-primary mb-4">Destaque da Adega</h3>
+<div class="aspect-[3/4] bg-surface rounded-lg mb-6 overflow-hidden relative">
+<img class="object-cover w-full h-full transform hover:scale-105 transition-transform duration-500" data-alt="Exquisite dark glass wine bottle with a minimal gold and white label standing elegantly on a stone surface" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDY2LrqZA3Rpym4wo73sGn0TzzG7x7k20Cbfaq4z2jIOb5en9U_olCQDMDIUIV--6YAp0nlQllGMGpAUQKBpGitnI_xRcjtjdBRSArSHGIhWlm13MSr_JEBwYd1aYmVmYBmN4_1TpqMLI8-8KjM0Knfz0lRmB6uMH_HgHyJBXXUkE9iSeWGfv9WrAVDg067zgJfEcwpxInr2LSgxBx-LAjnoy1S3E-nphVZUw5JBlfCTzVV_jFiP_TfdwM8V7JNxIvLJcUxfKxCdLVy"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary/90 text-white text-[10px] px-2 py-1 font-label uppercase tracking-widest">Safra 2015</span>
+</div>
+</div>
+<p class="font-headline text-lg text-primary">Château Margaux</p>
+<p class="text-on-surface-variant text-sm mt-1">Margaux, Bordeaux</p>
+</div>
+<div class="mt-4 pt-4 border-t border-stone-200/20">
+<p class="text-[10px] uppercase tracking-widest text-secondary font-label mb-2">Combina com</p>
+<p class="text-primary font-body text-sm font-semibold">Cordeiro com Crosta de Ervas</p>
+</div>
+</div>
+</div>
+<!-- Section: Menus do Chef (The Editorial Focus) -->
+<section class="mb-24">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-headline text-4xl text-primary">Menus do Chef</h2>
+<div class="h-[1px] flex-grow bg-outline-variant/30 mx-8"></div>
+<button class="text-primary-container font-label text-xs uppercase tracking-widest border-b-2 border-primary-container pb-1">Ver Todos</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+<!-- Menu Card 1 -->
+<article class="relative flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/2 -mt-12 md:mt-0 relative z-10">
+<div class="aspect-[4/5] bg-surface-container-highest rounded-lg overflow-hidden shadow-2xl">
+<img class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="Gourmet meat carpaccio plate with microgreens and parmesan shavings in professional kitchen lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs4mRMKPLgP0GBSlz4QtafPBtt5ZLc36sUN7VMoGiteIbwiMy9qU7PrpZVXb33zAhomBW9ZRKDRTLAdXtkPINkwtooB7eKoiPgsf5KUjImN9jc-GZ1KinhXxBfQxTTvd695yH9HzjK6dJ9kA0g7-X-b0eCRtao3NgjIiAAI0biJEDwd2LksUPsuNlBps8ZbM5tRgFgCQoPa4g-3ifq44ClVa1YUjCsqlpdIPaSzXhyAGXzBZsc13zmKP7echiIrEaoqRtFj_2IfDtC"/>
+</div>
+</div>
+<div class="w-full md:w-1/2 py-4">
+<p class="font-label text-[10px] uppercase tracking-[0.3em] text-secondary mb-2">Experiência Signature</p>
+<h3 class="font-headline text-3xl text-primary mb-6">Herança de Inverno</h3>
+<ul class="space-y-6">
+<li class="flex flex-col">
+<span class="text-[10px] uppercase font-label text-secondary tracking-widest">Entrada</span>
+<span class="text-on-surface font-body font-semibold">Carpaccio de Wagyu trufado</span>
+</li>
+<li class="flex flex-col">
+<span class="text-[10px] uppercase font-label text-secondary tracking-widest">Prato Principal</span>
+<span class="text-on-surface font-body font-semibold">Risotto de Funghi com Redução de Vinho</span>
+</li>
+<li class="flex flex-col">
+<span class="text-[10px] uppercase font-label text-secondary tracking-widest">Sobremesa</span>
+<span class="text-on-surface font-body font-semibold">Tarte Tatin com Creme de Baunilha</span>
+</li>
+</ul>
+<div class="mt-8 pt-8 border-t border-stone-200/50">
+<p class="text-xs italic font-body text-secondary mb-4">Sugerido para acompanhar Brunello di Montalcino.</p>
+<button class="text-primary font-label text-xs uppercase tracking-widest flex items-center hover:translate-x-2 transition-transform">
+                                Detalhes do Menu <span class="material-symbols-outlined ml-2 text-sm">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Menu Card 2 -->
+<article class="relative flex flex-col md:flex-row-reverse gap-8 items-center">
+<div class="w-full md:w-1/2 -mt-12 md:mt-0 relative z-10">
+<div class="aspect-[4/5] bg-surface-container-highest rounded-lg overflow-hidden shadow-2xl">
+<img class="object-cover w-full h-full grayscale hover:grayscale-0 transition-all duration-700" data-alt="Modern gourmet seafood dish with foam and delicate garnishes on a dark textured ceramic plate" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_iQUu5sO4QTS2TWVLigPN-48h48mjWj456WcHQ736du0sPiaharTx-1wmJKmZmaMD2x-rRj13hg2QD3h8mojimH6DNshLffUxxIcSdRqJp-2TNrEqqNwpgSjFhyqp6UF9bG24R41LmYiEFL28xGgAD51LGvC89s31BCbZHp78TdwMc4fXde67FnG7KtwlGg4TqewBtg8c4V_cA-TqYX8rFA8Ow0ARUaCd7IOUhmSdi87GvvqYaa51fOmnDoC48nGjkBi7N1AXaueE"/>
+</div>
+</div>
+<div class="w-full md:w-1/2 py-4 text-right md:text-left lg:text-right">
+<p class="font-label text-[10px] uppercase tracking-[0.3em] text-secondary mb-2">Experiência Costeira</p>
+<h3 class="font-headline text-3xl text-primary mb-6">Brisa Mediterrânea</h3>
+<ul class="space-y-6">
+<li class="flex flex-col">
+<span class="text-[10px] uppercase font-label text-secondary tracking-widest">Entrada</span>
+<span class="text-on-surface font-body font-semibold">Ostras frescas com Mignonette</span>
+</li>
+<li class="flex flex-col">
+<span class="text-[10px] uppercase font-label text-secondary tracking-widest">Prato Principal</span>
+<span class="text-on-surface font-body font-semibold">Robalo em crosta de sal marinho</span>
+</li>
+<li class="flex flex-col">
+<span class="text-[10px] uppercase font-label text-secondary tracking-widest">Sobremesa</span>
+<span class="text-on-surface font-body font-semibold">Sorbet de Limão Siciliano e Manjericão</span>
+</li>
+</ul>
+<div class="mt-8 pt-8 border-t border-stone-200/50">
+<p class="text-xs italic font-body text-secondary mb-4">Harmonização ideal com Sauvignon Blanc ou Chablis.</p>
+<button class="text-primary font-label text-xs uppercase tracking-widest flex items-center justify-end w-full hover:-translate-x-2 transition-transform">
+<span class="material-symbols-outlined mr-2 text-sm">arrow_back</span> Detalhes do Menu
+                            </button>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- Dynamic Pairing Tool Section -->
+<section class="bg-primary text-white p-12 rounded-xl mb-12 flex flex-col md:flex-row items-center justify-between gap-12">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl mb-4">Assistente de Harmonização</h2>
+<p class="font-body text-surface-container/60 leading-relaxed mb-8">
+                    Nossa inteligência artificial analisa o corpo, taninos e acidez dos vinhos registrados em sua adega pessoal para sugerir a combinação perfeita com o prato que você deseja cozinhar ou pedir hoje.
+                </p>
+<div class="flex items-center space-x-8">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a professional sommelier" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk2GwoI0rF2FBafcW2m10FkpwIByoZatM2im9TBsKgdBYDXeaEi_im_U55n1C_VWuJP5W_WB8avpB1KJlKwhqRgNxJshCshj2TGIkaVwLX4Yweb0IvY6Qmlj8CYTZkxF5aiwvADsF9q_yFSJJ_iddeXh8di8rDttR016iPLlGwVFMNHZ7eAN4qBVjpA5Jwn9md8_mXpktoRSC0OWp1Bv5ElVeH6MqsIyQbNe2tnINXiF0jm8y0cgdq05Lo43KsJKtkjb4bulK5CvLP"/>
+</div>
+<div class="w-10 h-10 rounded-full border-2 border-primary overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Portrait of a professional chef" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArvKzQ5pJDHCSFjgoetq6cRE_cfJRFMjjMZNNOTElEa3IgGVkaKv7CQgJVTaSrhMPir7fRJ2KPaseKZLfzzvwCL3c8Q8fOfbuipz9M_-y8tB-ld6qQ5bZMyNNBMYn0L5fafLYL8yJMrBBKawSg-GI6nPLLMjdR-4RXQjfM2pR4cDtLrDHPwxUMX8LM8uy9vR5ojdBvqS4p3HauQMF1QiczvchzCxBANVy_EnVLKQTmQwFcBlHGx5Px5Dgkrbi7OZ63aTHHJi9fwfnL"/>
+</div>
+</div>
+<p class="text-xs font-label uppercase tracking-widest text-surface-container-high">Curadoria de Especialistas</p>
+</div>
+</div>
+<div class="w-full md:w-auto">
+<div class="bg-primary-container p-8 rounded-lg flex flex-col items-center text-center shadow-xl border border-white/5">
+<span class="material-symbols-outlined text-4xl mb-4 text-[#E2D1C3]" data-weight="fill">wine_bar</span>
+<h4 class="font-headline text-xl mb-2">Scanner de Cardápio</h4>
+<p class="text-xs font-body text-[#E2D1C3]/60 mb-6">Envie uma foto do menu do restaurante</p>
+<button class="bg-surface-container-lowest text-primary px-6 py-2 rounded-md font-label text-xs tracking-widest uppercase hover:bg-surface-variant transition-colors">Iniciar Scanner</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Area (Subtle/Editorial) -->
+<footer class="border-t border-outline-variant/10 py-12 px-8 max-w-screen-xl mx-auto flex flex-col md:flex-row justify-between items-center text-stone-400 text-xs font-label tracking-widest uppercase">
+<div>© 2024 Réserve Privée — A Curadoria da Herança</div>
+<div class="flex space-x-12 mt-8 md:mt-0">
+<a class="hover:text-primary transition-colors" href="#">Privacidade</a>
+<a class="hover:text-primary transition-colors" href="#">Adega Digital</a>
+<a class="hover:text-primary transition-colors" href="#">Sommelier Direct</a>
+</div>
+</footer>
+<!-- SideNavBar - Following JSON structure (Visual anchor only as per requirements) -->
+<aside class="hidden xl:flex fixed left-0 top-0 h-screen w-20 flex-col items-center py-8 bg-[#FCF9F3] border-r border-stone-200/20 group hover:w-64 transition-all duration-500 z-[60] overflow-hidden">
+<div class="mb-12">
+<span class="material-symbols-outlined text-[#4A0E0E] text-3xl">wine_bar</span>
+</div>
+<nav class="flex flex-col space-y-8 w-full px-4">
+<div class="flex items-center space-x-4 p-2 cursor-pointer hover:bg-stone-100 rounded-md transition-colors group/item">
+<span class="material-symbols-outlined text-[#4A0E0E]">dashboard</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-label text-sm text-[#4A0E0E]">Painel</span>
+</div>
+<div class="flex items-center space-x-4 p-2 cursor-pointer hover:bg-stone-100 rounded-md transition-colors group/item">
+<span class="material-symbols-outlined text-[#4A0E0E]">qr_code_scanner</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-label text-sm text-[#4A0E0E]">Scanner</span>
+</div>
+<div class="flex items-center space-x-4 p-2 cursor-pointer bg-[#4A0E0E] text-white rounded-md shadow-lg transition-all scale-95 duration-200">
+<span class="material-symbols-outlined">restaurant_menu</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-label text-sm">Harmonização</span>
+</div>
+<div class="flex items-center space-x-4 p-2 cursor-pointer hover:bg-stone-100 rounded-md transition-colors group/item">
+<span class="material-symbols-outlined text-[#4A0E0E]">wine_bar</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-label text-sm text-[#4A0E0E]">Minha Adega</span>
+</div>
+<div class="flex items-center space-x-4 p-2 cursor-pointer hover:bg-stone-100 rounded-md transition-colors group/item">
+<span class="material-symbols-outlined text-[#4A0E0E]">groups</span>
+<span class="opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap font-label text-sm text-[#4A0E0E]">Comunidade</span>
+</div>
+</nav>
+<div class="mt-auto opacity-0 group-hover:opacity-100 transition-opacity p-4 w-full">
+<div class="bg-primary-container/10 p-4 rounded-lg">
+<p class="text-[10px] font-label text-primary-container font-bold uppercase mb-2">Sommelier Gold</p>
+<p class="text-[10px] text-stone-500 mb-4">Acesso exclusivo a safras raras.</p>
+<button class="w-full py-2 bg-primary-container text-white text-[10px] rounded uppercase tracking-widest">Upgrade</button>
+</div>
+</div>
+</aside>
+</body></html>

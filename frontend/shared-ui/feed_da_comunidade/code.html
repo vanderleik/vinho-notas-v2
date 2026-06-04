@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Histórias de Safra | Réserve Privée</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3d0506",
+                        "background": "#fcf9f3",
+                        "surface-container": "#f0eee8",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-surface": "#1c1c18",
+                        "surface-tint": "#954742",
+                        "tertiary-fixed": "#ffdcc0",
+                        "on-primary-fixed-variant": "#77302d",
+                        "tertiary": "#1d0c00",
+                        "primary-fixed": "#ffdad7",
+                        "on-secondary-container": "#656464",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#31312d",
+                        "surface-container-highest": "#e5e2dc",
+                        "secondary-container": "#e4e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ebe8e2",
+                        "primary": "#2a0002",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#36200a",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#cc726d",
+                        "on-background": "#1c1c18",
+                        "on-surface-variant": "#544341",
+                        "tertiary-fixed-dim": "#e6bf9e",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-variant": "#e5e2dc",
+                        "on-tertiary-fixed": "#2b1703",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f6f3ed",
+                        "inverse-on-surface": "#f3f0ea",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "secondary": "#5f5e5e",
+                        "surface": "#fcf9f3",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#dac1bf",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-bright": "#fcf9f3",
+                        "outline": "#877270",
+                        "surface-dim": "#dcdad4",
+                        "on-tertiary-container": "#a88568",
+                        "on-tertiary-fixed-variant": "#5c4128",
+                        "primary-container": "#4a0e0e",
+                        "on-secondary-fixed-variant": "#474747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .editorial-shadow {
+            box-shadow: 0px 24px 48px rgba(28, 28, 24, 0.06);
+        }
+        .wine-gradient {
+            background: linear-gradient(135deg, #4a0e0e 0%, #2a0002 100%);
+        }
+        .glass-nav {
+            background-color: rgba(252, 249, 243, 0.8);
+            backdrop-filter: blur(16px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-50 glass-nav shadow-sm dark:shadow-none">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<h1 class="font-headline text-2xl font-normal tracking-tighter text-primary-container dark:text-stone-100">Réserve Privée</h1>
+<nav class="hidden md:flex items-center space-x-12 font-headline text-sm tracking-wider uppercase">
+<a class="text-stone-500 dark:text-stone-400 hover:text-primary-container transition-colors" href="#">Dashboard</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-primary-container transition-colors" href="#">Scanner</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-primary-container transition-colors" href="#">Adega</a>
+<a class="text-primary-container dark:text-tertiary-fixed-dim font-semibold border-b-2 border-primary-container pb-1" href="#">Social</a>
+</nav>
+<div class="flex items-center space-x-6">
+<button class="text-stone-500 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-stone-500 hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-12 max-w-screen-2xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left Column: Navigation Sidebar (Hidden on mobile) -->
+<aside class="hidden lg:block lg:col-span-3">
+<div class="sticky top-28 space-y-8">
+<div>
+<h2 class="font-headline text-xl text-primary-container mb-1">Histórias de Safra</h2>
+<p class="text-secondary text-sm">Curadoria de Herança</p>
+</div>
+<nav class="flex flex-col space-y-2 font-body text-sm font-medium">
+<a class="flex items-center space-x-3 p-3 bg-primary-container text-white rounded-md editorial-shadow" href="#">
+<span class="material-symbols-outlined" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+<span>Comunidade</span>
+</a>
+<a class="flex items-center space-x-3 p-3 text-stone-600 hover:bg-stone-100 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="wine_bar">wine_bar</span>
+<span>Minha Adega</span>
+</a>
+<a class="flex items-center space-x-3 p-3 text-stone-600 hover:bg-stone-100 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span>Minhas Notas</span>
+</a>
+<a class="flex items-center space-x-3 p-3 text-stone-600 hover:bg-stone-100 transition-transform hover:translate-x-1" href="#">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span>
+<span>Scanner</span>
+</a>
+</nav>
+<div class="pt-8 border-t border-outline-variant/20">
+<button class="wine-gradient w-full py-4 text-on-primary rounded-md shadow-lg font-label text-sm tracking-wide flex items-center justify-center space-x-2">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+<span>COMPARTILHAR SAFRA</span>
+</button>
+</div>
+</div>
+</aside>
+<!-- Center Column: Social Feed -->
+<section class="col-span-1 lg:col-span-6 space-y-16">
+<!-- Feed Header -->
+<div class="flex items-end justify-between border-b border-outline-variant/10 pb-6">
+<div>
+<span class="font-label text-xs uppercase tracking-[0.2em] text-secondary">Explorar</span>
+<h2 class="font-headline text-4xl mt-2 italic">O Mural do Sommelier</h2>
+</div>
+<div class="flex space-x-4">
+<button class="font-label text-sm text-primary-container border-b-2 border-primary-container pb-1">Recentes</button>
+<button class="font-label text-sm text-secondary hover:text-primary-container transition-colors">Populares</button>
+</div>
+</div>
+<!-- Post 1 -->
+<article class="relative">
+<div class="bg-surface-container-low rounded-xl p-8 editorial-shadow overflow-visible">
+<div class="flex items-center justify-between mb-8">
+<div class="flex items-center space-x-4">
+<img alt="Avatar" class="w-12 h-12 rounded-full object-cover grayscale" data-alt="portrait of a professional male sommelier in a suit with soft studio lighting and dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKLawEzXbGUfuiOWLbsaC0X5VkNEvwKQstxB6TyP5aYANxbBaauq6oQJvVDK35Cuc-qV_mBriHT5-Xw8Bk4JRUZ0wZgTwNoTiuucsYo0e4rRn_hd5Gvm-vpOPwXbwwDYzo20W4DFdHYxBkKZl4d0YBuXB31De5yuxtqp6w74DfKc28WUisFZlbOBg3xt24Ij7KJUj7cWfzQbkOJrPRBwaAzpReDlKgtBiScyazFeNltbCbQMAl3AacnVfuCIGXizAw_gjTII2n6hy4"/>
+<div>
+<h4 class="font-headline font-medium text-lg">Julian Montfort</h4>
+<p class="text-secondary text-xs uppercase tracking-widest">Master Sommelier • 2h atrás</p>
+</div>
+</div>
+<div class="flex items-center bg-primary-container text-white px-3 py-1 rounded-sm">
+<span class="font-headline text-lg font-semibold">96</span>
+<span class="text-[10px] ml-1 uppercase tracking-tighter opacity-70">pts</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="space-y-4">
+<h3 class="font-headline text-2xl leading-tight">Château Margaux 2015: Uma Elegância Atemporal</h3>
+<p class="font-body text-on-surface-variant leading-relaxed">
+                                "Notas profundas de violetas e terra úmida. O tanino é como seda pura, envolvendo o paladar com uma estrutura que promete décadas. Um privilégio degustar esta safra histórica hoje."
+                            </p>
+<div class="flex flex-wrap gap-2 pt-2">
+<span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs rounded-full font-label uppercase">Margaux</span>
+<span class="px-3 py-1 bg-surface-container-highest text-secondary text-xs rounded-full font-label uppercase">Cabernet Sauvignon</span>
+</div>
+</div>
+<div class="relative group">
+<div class="aspect-[3/4] rounded-lg overflow-hidden editorial-shadow">
+<img alt="Vinho" class="w-full h-full object-cover" data-alt="luxurious close-up of a dark red wine bottle label in a dimly lit cellar with soft golden rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4oDGha51jrrR2OWXBiLUW2I7VY-Z-IyPKpSvu3C4jp9BZLlmXtN1k7gf8YDcZiOQnBGNXhEbzKIHuat13oxKk56STP-9FDkM9G3eaqNnhXHW7wrifKavEEwwX8ukuigjyV_nCXsrcGR0SrWv3LQYzXv5IGYhr6R7AlGB8ahlWORjM2NeBYB7zklr2Ycvn8NShuZc3umcSzUCYerDgAs_ICjXuw1aCv93UCCwXzAe7G00gI4nOEP8ZlaB1GJp4BwlS-7WTyk5enCQK"/>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-outline-variant/10 flex items-center justify-between">
+<div class="flex space-x-6">
+<button class="flex items-center space-x-2 text-stone-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+<span class="font-label text-sm">42</span>
+</button>
+<button class="flex items-center space-x-2 text-stone-500 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-label text-sm">12</span>
+</button>
+</div>
+<button class="text-primary-container font-label text-sm border-b-2 border-transparent hover:border-primary-container transition-all">
+                            Ler notas completas
+                        </button>
+</div>
+</div>
+</article>
+<!-- Post 2: Image focused -->
+<article class="relative">
+<div class="bg-surface-container-low rounded-xl p-8 editorial-shadow">
+<div class="flex items-center space-x-4 mb-6">
+<img alt="Avatar" class="w-12 h-12 rounded-full object-cover grayscale" data-alt="professional female sommelier with elegant attire in a high-end restaurant background blurred" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXs8s1rs8Sn9iL7PMHhXThCAf0x3YKxRjQGjIhVjDreHdz67tTcIb3cE_tmqSvuiS2_8o0IcNLv7hjh2DupM7ImC7Zb-Zb5yqGha8Oy7hjAA_MccyLq-9Orlm9-JBUFnJraZTSj3gTMGtx0t1sEXdllg4EukrfvkhOIKPo7gt7TLm5y9TkECvZ2-nEFzFQoQ9B3owza1jHQmYKnTKPW3Ycg1hR22a0cwctoFwhsYDQon-5FpWGRErWDdQOGXiJ0EUXN3sLcUib6ZQL"/>
+<div>
+<h4 class="font-headline font-medium text-lg">Beatriz Alencar</h4>
+<p class="text-secondary text-xs uppercase tracking-widest">Enóloga • Ontem</p>
+</div>
+</div>
+<div class="mb-6 rounded-lg overflow-hidden h-[400px]">
+<img alt="Vinha" class="w-full h-full object-cover" data-alt="breathtaking landscape of rolling vineyards in Tuscany at sunrise with morning mist between rows of vines" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCK6fk933ultoVL8149elplxIR9GaIYAHyBANts8pfCmFT9ASO4CisjkxZpwQek75haI-673Loe4WbUDWaxY7uAyps1VmRxvNuP3FqDY-n9aLC7r-MO3jR35KLG3Gc2KuqWcqfcTX6DRt5U3hewWfmt-i8udZArCkm9w--qxFnnh3RRsH047DGrmFz6ksJ81fN2oZXwhC2KmCl_UjHtIGlpqxE_PkjomnW4afr4z_BmV7wrXMMJnPlW_CpBy1j-tqwVw1QkqJv7u2Hm"/>
+</div>
+<h3 class="font-headline text-3xl mb-4 italic">Amanhecer no Douro</h3>
+<p class="font-body text-on-surface-variant leading-relaxed mb-6">
+                        "O ciclo se renova. A safra deste ano promete ser excepcional pelo equilíbrio térmico que tivemos nestas últimas semanas."
+                    </p>
+<div class="flex items-center justify-between text-stone-500">
+<div class="flex space-x-4">
+<span class="material-symbols-outlined" data-icon="share">share</span>
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+</div>
+<span class="font-label text-sm">89 curtidas</span>
+</div>
+</div>
+</article>
+</section>
+<!-- Right Column: Suggestions & Trends -->
+<aside class="hidden lg:block lg:col-span-3">
+<div class="sticky top-28 space-y-12">
+<!-- Sommeliers to Follow -->
+<section>
+<h3 class="font-label text-xs uppercase tracking-[0.2em] text-secondary mb-6">Sugestões de Perfil</h3>
+<div class="space-y-6">
+<!-- Suggestion 1 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-stone-200 overflow-hidden">
+<img alt="Avatar" data-alt="portrait of a male wine expert in casual elegant attire in a rustic kitchen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlO1wlEcsc05Gkh_ui6c8Tfp_6EVPbNanEUzc8mvaxzTa6s4zOrtl7fyFGvt4ezaG8bIgtf61i1eRmC52TUUDiTHessAigmQkRPnG_SamlWnehVPFfon-P-tuXosVWdLj093WnCdoJzeyjm0-IMQl88DCVJeDTQXHYDkvudwiz9t9XOlY3sfDZTFmFZOJGdWLMZ2vE3Y5c7Hz-mEUURMkn2mRSZ1Li1YXGuZnvpEBIx5NwGFgtQo_vdddvfjNwmJf2SDMbW4jYD7qM"/>
+</div>
+<div>
+<p class="font-body text-sm font-semibold">Marco Rossi</p>
+<p class="text-secondary text-[10px] uppercase tracking-tighter">Especialista Barolo</p>
+</div>
+</div>
+<button class="text-primary-container text-xs font-bold hover:underline">Seguir</button>
+</div>
+<!-- Suggestion 2 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-stone-200 overflow-hidden">
+<img alt="Avatar" data-alt="close-up portrait of a woman sommelier holding a crystal glass of white wine" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-MBG7DNFsCnWKXwZXu2RZ4p8EG7y7aEWc58bioDPacT89zKgg4E0NiOi8cNLacHwxbwN6Wx9ey6Cvp-m0B53MbZPs9AW-yzhz6SVo3mIFAVtuuHiR_-3U1sSN3APrwrCOfpDFuMXwOAUcpbdwKGYkcAcaP1cMtk_-0RqpsBWlqmVUSBOjbYP3HOFi3eJuJPxLuHpC7kSuZPViWbvULV31oNi4XskLEe3PfinSzvACvmfnhSobspc3MRHT45ehGYETVVKFjxwBGkW9"/>
+</div>
+<div>
+<p class="font-body text-sm font-semibold">Clara Vignes</p>
+<p class="text-secondary text-[10px] uppercase tracking-tighter">Sommelier de Brancos</p>
+</div>
+</div>
+<button class="text-primary-container text-xs font-bold hover:underline">Seguir</button>
+</div>
+<!-- Suggestion 3 -->
+<div class="flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-10 h-10 rounded-full bg-stone-200 overflow-hidden">
+<img alt="Avatar" data-alt="middle aged man with glasses looking like a wine critic in an office full of books" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF2jhuHGIvxDCaYYdwMfmSfO5dOAbUhVEmtOoiSWz5m7vI7Vg5cog2rgBmAfYYwiMRoHK--N_8o8vHRPOwiyPWUYvDx2asQiokSQLirvy9RZqbMmXVzaxjZHdgeeQ3tLwBkcRgcO38s91nLDAoe3PGhABru6n_wqiGKYJ6Kqjx-M9bwKxranj9_F_Jv2HCNnOimwkf8peIEPnMpa9l24GEdZAoX_g_DEFX98nSWyBVM52Z0suxxZgBEq6kc7y8ukI0t47klbGsC3X9"/>
+</div>
+<div>
+<p class="font-body text-sm font-semibold">Dr. Eduardo P.</p>
+<p class="text-secondary text-[10px] uppercase tracking-tighter">Crítico de Safras</p>
+</div>
+</div>
+<button class="text-primary-container text-xs font-bold hover:underline">Seguir</button>
+</div>
+</div>
+<button class="w-full mt-8 py-2 text-stone-400 font-label text-[10px] uppercase tracking-[0.1em] border border-outline-variant/20 rounded-sm hover:bg-stone-50 transition-colors">
+                        Ver todos os curadores
+                    </button>
+</section>
+<!-- Trending Regions -->
+<section class="bg-primary-container p-6 rounded-lg text-on-primary">
+<h3 class="font-label text-xs uppercase tracking-[0.2em] opacity-60 mb-6">Regiões em Destaque</h3>
+<ul class="space-y-4 font-headline text-lg italic">
+<li class="flex items-center justify-between border-b border-white/10 pb-2">
+<span>Bordeaux</span>
+<span class="text-xs font-label not-italic opacity-60">+12%</span>
+</li>
+<li class="flex items-center justify-between border-b border-white/10 pb-2">
+<span>Vale do Uco</span>
+<span class="text-xs font-label not-italic opacity-60">+8%</span>
+</li>
+<li class="flex items-center justify-between border-b border-white/10 pb-2">
+<span>Piemonte</span>
+<span class="text-xs font-label not-italic opacity-60">+21%</span>
+</li>
+</ul>
+</section>
+<!-- Featured Collection -->
+<div class="relative h-64 rounded-lg overflow-hidden group">
+<img alt="Coleção" class="w-full h-full object-cover brightness-50 group-hover:scale-105 transition-transform duration-500" data-alt="abstract artistic composition of wine glasses and deep red liquid textures with high contrast lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3uFAGf3_HBa_N3ikSIZ2JqnekJi70hBNh0z9qgzlcanN-binBU4-xmOagY9YdmgcyuDNXy8g4TJhvGuTJ_I7tbgr0S4MfgYhL0WvC4sYczfrPKqH9s3BR4G70IDCr7Ip-d437ty2bUZ4SrETt8g6z2Rd8rlQaomYuy875cGVyS7Q3AIY6-EM_CjN0SYaD2kZ224W3c8ZfGp2kihFYswOvi_fC70M0s6iOJIKKbk3JKq2lPQvOFVojjxwZ-9pUKu5HWY5FScF9m1R9"/>
+<div class="absolute inset-0 p-6 flex flex-col justify-end">
+<span class="font-label text-[10px] uppercase tracking-widest text-white/70">Coleção Exclusiva</span>
+<h4 class="font-headline text-xl text-white">Vinhos de Deserto</h4>
+<a class="mt-2 text-white/90 text-sm font-label underline underline-offset-4 decoration-white/30" href="#">Explorar agora</a>
+</div>
+</div>
+</div>
+</aside>
+</main>
+<!-- Mobile Navigation Bar -->
+<footer class="md:hidden fixed bottom-0 left-0 right-0 glass-nav z-50">
+<div class="flex justify-around items-center h-16 px-4">
+<button class="flex flex-col items-center text-stone-500">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+</button>
+<button class="flex flex-col items-center text-stone-500">
+<span class="material-symbols-outlined" data-icon="wine_bar">wine_bar</span>
+</button>
+<button class="flex flex-col items-center -mt-8 wine-gradient w-12 h-12 rounded-full text-white shadow-xl">
+<span class="material-symbols-outlined leading-[48px]" data-icon="qr_code_scanner">qr_code_scanner</span>
+</button>
+<button class="flex flex-col items-center text-primary-container">
+<span class="material-symbols-outlined" data-icon="groups" style="font-variation-settings: 'FILL' 1;">groups</span>
+</button>
+<button class="flex flex-col items-center text-stone-500">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+</div>
+</footer>
+</body></html>

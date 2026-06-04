@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;family=Manrope:wght@300;400;600;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#877270",
+                    "on-error": "#ffffff",
+                    "on-error-container": "#93000a",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed": "#1b1d0e",
+                    "on-secondary-fixed": "#101e1e",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#c8c8b0",
+                    "secondary": "#536161",
+                    "outline-variant": "#dac1bf",
+                    "surface-bright": "#fbfbe2",
+                    "error": "#ba1a1a",
+                    "secondary-fixed-dim": "#bac9c9",
+                    "on-primary-fixed-variant": "#77302d",
+                    "surface-container": "#efefd7",
+                    "on-primary-fixed": "#3d0506",
+                    "primary-fixed-dim": "#ffb3ad",
+                    "surface-tint": "#954742",
+                    "on-tertiary-container": "#8c8d78",
+                    "on-surface": "#1b1d0e",
+                    "on-background": "#1b1d0e",
+                    "surface-dim": "#dbdcc3",
+                    "primary-fixed": "#ffdad7",
+                    "on-tertiary": "#ffffff",
+                    "primary-container": "#4a0e0e",
+                    "on-surface-variant": "#544341",
+                    "surface-variant": "#e4e4cc",
+                    "tertiary-fixed": "#e4e4cc",
+                    "on-tertiary-fixed-variant": "#474836",
+                    "on-secondary-container": "#596767",
+                    "secondary-fixed": "#d6e6e5",
+                    "on-primary": "#ffffff",
+                    "surface-container-highest": "#e4e4cc",
+                    "on-primary-container": "#cc726d",
+                    "surface-container-high": "#eaead1",
+                    "primary": "#2a0002",
+                    "tertiary": "#0f1104",
+                    "inverse-on-surface": "#f2f2d9",
+                    "on-secondary-fixed-variant": "#3b4949",
+                    "tertiary-container": "#242616",
+                    "secondary-container": "#d6e6e5",
+                    "on-secondary": "#ffffff",
+                    "inverse-surface": "#303221",
+                    "background": "#fbfbe2",
+                    "inverse-primary": "#ffb3ad",
+                    "surface-container-low": "#f5f5dc",
+                    "surface": "#fbfbe2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "fontFamily": {
+                    "headline": [
+                            "Noto Serif"
+                    ],
+                    "body": [
+                            "Manrope"
+                    ],
+                    "label": [
+                            "Manrope"
+                    ]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .aroma-sector:hover {
+            filter: brightness(0.9);
+            transform: scale(1.02);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#F5F5DC]/70 backdrop-blur-xl dark:bg-[#1B1D0E]/80 shadow-[0_12px_32px_rgba(74,14,14,0.08)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<span class="text-2xl font-bold italic text-[#4A0E0E] dark:text-[#E6B8B8] font-headline tracking-tight">Réserve Privée</span>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#536161] dark:text-[#A0A0A0] hover:text-[#4A0E0E] transition-colors duration-300 font-headline tracking-tight" href="#">Dashboard</a>
+<a class="text-[#536161] dark:text-[#A0A0A0] hover:text-[#4A0E0E] transition-colors duration-300 font-headline tracking-tight" href="#">Scanner</a>
+<a class="text-[#4A0E0E] border-b-2 border-[#4A0E0E] pb-1 dark:text-[#E6B8B8] dark:border-[#E6B8B8] font-headline tracking-tight" href="#">Cellar</a>
+<a class="text-[#536161] dark:text-[#A0A0A0] hover:text-[#4A0E0E] transition-colors duration-300 font-headline tracking-tight" href="#">Social</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#4A0E0E] dark:text-[#E6B8B8] cursor-pointer scale-95 transition-transform duration-200" data-icon="account_circle">account_circle</span>
+</div>
+</div>
+</nav>
+<main class="pt-32 pb-20 px-6 max-w-6xl mx-auto">
+<!-- Hero Header -->
+<header class="relative mb-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-end">
+<div class="md:col-span-7 z-10">
+<h1 class="text-display-lg text-5xl md:text-7xl font-headline font-bold text-primary tracking-tight mb-4">
+                    Tasting <span class="italic font-normal">Journal</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-md leading-relaxed">
+                    Evaluate the complexities of your latest acquisition. Record the essence of the terroir and the soul of the vintage.
+                </p>
+</div>
+<div class="md:col-span-5 relative">
+<div class="aspect-[4/5] overflow-hidden rounded-xl shadow-2xl transform rotate-2 translate-x-4">
+<img class="w-full h-full object-cover" data-alt="close-up of a glass of deep red wine with soft bokeh lighting in a dark rustic cellar setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuRTg_Ac-8AIPQ_qsH7_okeIU1j5W3i-3gYfhqd_rtUbXly_NuMD2zmbKa-kik3Ao0hdVmgNZWmfGQoc4h9ssGlcgpAQRYak6cFa_l96lHL1LOs0HSxIEa7UR4Hqpr8l5GaYBZH-HpAMZJjRM3ycb_uq8Zw1p-b3vwoR-h_0nTKAEr_G-VcHfedqmBfH8dEnbgbGt8YDxGGJGldqeVHpkacuMEFYorjsRD2g1m5MGUwyarmZf7m0gIqXBvk4ZOaNTx-XLP7QoiMCzk"/>
+</div>
+<div class="absolute -bottom-6 -left-12 bg-surface-container-lowest p-6 rounded-xl shadow-xl max-w-[200px]">
+<span class="text-sm font-label uppercase tracking-widest text-secondary block mb-2">Vintage 2018</span>
+<span class="text-xl font-headline font-bold text-primary italic">Château Margaux</span>
+</div>
+</div>
+</header>
+<form class="space-y-16">
+<!-- Visual Evaluation Section: Bento Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Rating Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl md:col-span-1 shadow-sm border border-outline-variant/10">
+<h3 class="text-sm font-label uppercase tracking-widest text-secondary mb-6">Global Score</h3>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-outline-variant text-4xl" data-icon="star">star</span>
+</div>
+<p class="mt-4 text-on-surface-variant italic">Exquisite depth, notable potential for aging.</p>
+</div>
+<!-- Color & Appearance -->
+<div class="bg-surface-container-low p-8 rounded-xl md:col-span-2 flex flex-col justify-between">
+<h3 class="text-sm font-label uppercase tracking-widest text-secondary mb-4">Appearance</h3>
+<div class="flex flex-wrap gap-4">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="hidden peer" name="color" type="radio"/>
+<div class="w-10 h-10 rounded-full bg-[#722F37] border-2 border-transparent peer-checked:border-primary peer-checked:ring-2 ring-primary/20 transition-all"></div>
+<span class="font-label text-sm text-secondary group-hover:text-primary">Deep Ruby</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="hidden peer" name="color" type="radio"/>
+<div class="w-10 h-10 rounded-full bg-[#4A0E0E] border-2 border-transparent peer-checked:border-primary peer-checked:ring-2 ring-primary/20 transition-all"></div>
+<span class="font-label text-sm text-secondary group-hover:text-primary">Garnet</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="hidden peer" name="color" type="radio"/>
+<div class="w-10 h-10 rounded-full bg-[#9E1B32] border-2 border-transparent peer-checked:border-primary peer-checked:ring-2 ring-primary/20 transition-all"></div>
+<span class="font-label text-sm text-secondary group-hover:text-primary">Purple</span>
+</label>
+</div>
+</div>
+</section>
+<!-- Aroma Wheel (Visual Pattern) -->
+<section class="bg-surface-container-lowest p-10 rounded-xl shadow-sm overflow-hidden relative">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-3xl font-headline font-bold text-primary mb-6">Aromatic Profile</h2>
+<p class="text-on-surface-variant mb-8">Select the primary and secondary notes detected on the nose and palate.</p>
+<div class="space-y-6">
+<div>
+<h4 class="text-xs font-label uppercase tracking-widest text-secondary mb-3">Fruits</h4>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-primary hover:text-on-primary transition-colors font-label text-sm" type="button">Blackberry</button>
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label text-sm" type="button">Plum</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-primary hover:text-on-primary transition-colors font-label text-sm" type="button">Cherry</button>
+</div>
+</div>
+<div>
+<h4 class="text-xs font-label uppercase tracking-widest text-secondary mb-3">Spice &amp; Earth</h4>
+<div class="flex flex-wrap gap-2">
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-primary hover:text-on-primary transition-colors font-label text-sm" type="button">Vanilla</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-primary hover:text-on-primary transition-colors font-label text-sm" type="button">Leather</button>
+<button class="px-4 py-2 rounded-full bg-primary text-on-primary font-label text-sm" type="button">Oak</button>
+<button class="px-4 py-2 rounded-full border border-outline-variant bg-surface-container-lowest text-on-surface hover:bg-primary hover:text-on-primary transition-colors font-label text-sm" type="button">Tobacco</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Decorative/Functional Aroma Wheel Diagram -->
+<div class="relative flex justify-center">
+<div class="w-80 h-80 rounded-full border-[1.5rem] border-surface-container-low flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary-fixed-variant text-5xl opacity-20" data-icon="wine_bar">wine_bar</span>
+</div>
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 100 100">
+<circle class="aroma-sector cursor-pointer" cx="50" cy="50" fill="transparent" r="40" stroke="#4A0E0E" stroke-dasharray="62.8 251.2" stroke-width="20"></circle>
+<circle class="aroma-sector cursor-pointer" cx="50" cy="50" fill="transparent" r="40" stroke="#BA1A1A" stroke-dasharray="62.8 251.2" stroke-dashoffset="-62.8" stroke-width="20"></circle>
+<circle class="aroma-sector cursor-pointer" cx="50" cy="50" fill="transparent" r="40" stroke="#536161" stroke-dasharray="125.6 251.2" stroke-dashoffset="-125.6" stroke-width="20"></circle>
+</svg>
+<div class="absolute -top-4 font-label text-[10px] uppercase tracking-widest text-primary">Floral</div>
+<div class="absolute -right-6 font-label text-[10px] uppercase tracking-widest text-secondary">Spice</div>
+<div class="absolute -bottom-4 font-label text-[10px] uppercase tracking-widest text-error">Fruits</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Palate & Structure -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-10">
+<h2 class="text-3xl font-headline font-bold text-primary">Palate Structure</h2>
+<div class="space-y-2">
+<div class="flex justify-between items-center mb-2">
+<label class="font-label text-sm uppercase tracking-wider text-secondary">Tannins</label>
+<span class="text-xs font-bold text-primary">Medium-High</span>
+</div>
+<input class="w-full h-1 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary" type="range"/>
+<div class="flex justify-between text-[10px] text-on-surface-variant font-label uppercase">
+<span>Silky</span>
+<span>Aggressive</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center mb-2">
+<label class="font-label text-sm uppercase tracking-wider text-secondary">Body</label>
+<span class="text-xs font-bold text-primary">Full Body</span>
+</div>
+<input class="w-full h-1 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary" type="range" value="80"/>
+<div class="flex justify-between text-[10px] text-on-surface-variant font-label uppercase">
+<span>Light</span>
+<span>Full</span>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between items-center mb-2">
+<label class="font-label text-sm uppercase tracking-wider text-secondary">Acidity</label>
+<span class="text-xs font-bold text-primary">Balanced</span>
+</div>
+<input class="w-full h-1 bg-surface-container rounded-lg appearance-none cursor-pointer accent-primary" type="range" value="50"/>
+<div class="flex justify-between text-[10px] text-on-surface-variant font-label uppercase">
+<span>Flat</span>
+<span>Tart</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h3 class="text-sm font-label uppercase tracking-widest text-secondary mb-6">Personal Notes</h3>
+<textarea class="w-full bg-surface-container-lowest border-none rounded-lg p-4 font-body text-on-surface placeholder:text-on-surface-variant/40 focus:ring-1 focus:ring-primary min-h-[200px]" placeholder="Describe your overall impression, the finish, and the wine's evolution in the glass..."></textarea>
+</div>
+</section>
+<!-- Media Upload -->
+<section class="bg-surface p-10 border-2 border-dashed border-outline-variant/30 rounded-xl text-center">
+<span class="material-symbols-outlined text-primary text-5xl mb-4" data-icon="add_a_photo">add_a_photo</span>
+<h3 class="text-xl font-headline font-bold text-primary mb-2">Capture the Moment</h3>
+<p class="text-on-surface-variant mb-6">Upload a photo of the label or the setting of your tasting.</p>
+<div class="flex justify-center gap-4">
+<button class="px-8 py-3 bg-secondary text-on-secondary rounded-full font-label font-bold hover:bg-secondary/90 transition-all" type="button">Select Image</button>
+</div>
+</section>
+<!-- Footer Action -->
+<footer class="flex flex-col md:flex-row justify-between items-center gap-6 pt-10 border-t border-outline-variant/20">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary" data-icon="lock">lock</span>
+<p class="text-sm text-on-surface-variant">This evaluation will be saved to your private cellar log.</p>
+</div>
+<div class="flex gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none px-10 py-4 text-primary font-bold font-label hover:bg-surface-container-low transition-all rounded-full" type="button">Save Draft</button>
+<button class="flex-1 md:flex-none px-12 py-4 bg-primary text-on-primary font-bold font-label rounded-full shadow-lg hover:shadow-primary/20 transition-all bg-gradient-to-tr from-primary to-[#5A1212]" type="submit">Archive Evaluation</button>
+</div>
+</footer>
+</form>
+</main>
+<!-- Contextual FAB (Hidden on this detail-heavy screen as per mandate, but logic included if needed for other screens) -->
+<!-- Suppressed for Focus -->
+</body></html>

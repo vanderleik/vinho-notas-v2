@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+
+<html class="light" lang="pt-BR"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Diário de Degustação - Réserve Privée</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-fixed": "#3d0506",
+                        "background": "#fcf9f3",
+                        "surface-container": "#f0eee8",
+                        "secondary-fixed": "#e4e2e1",
+                        "on-surface": "#1c1c18",
+                        "surface-tint": "#954742",
+                        "tertiary-fixed": "#ffdcc0",
+                        "on-primary-fixed-variant": "#77302d",
+                        "tertiary": "#1d0c00",
+                        "primary-fixed": "#ffdad7",
+                        "on-secondary-container": "#656464",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "inverse-surface": "#31312d",
+                        "surface-container-highest": "#e5e2dc",
+                        "secondary-container": "#e4e2e1",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-container-high": "#ebe8e2",
+                        "primary": "#2a0002",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#36200a",
+                        "on-error": "#ffffff",
+                        "on-primary-container": "#cc726d",
+                        "on-background": "#1c1c18",
+                        "on-surface-variant": "#544341",
+                        "tertiary-fixed-dim": "#e6bf9e",
+                        "primary-fixed-dim": "#ffb3ad",
+                        "surface-variant": "#e5e2dc",
+                        "on-tertiary-fixed": "#2b1703",
+                        "on-primary": "#ffffff",
+                        "surface-container-low": "#f6f3ed",
+                        "inverse-on-surface": "#f3f0ea",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "secondary": "#5f5e5e",
+                        "surface": "#fcf9f3",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "outline-variant": "#dac1bf",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#ffb3ad",
+                        "surface-bright": "#fcf9f3",
+                        "outline": "#877270",
+                        "surface-dim": "#dcdad4",
+                        "on-tertiary-container": "#a88568",
+                        "on-tertiary-fixed-variant": "#5c4128",
+                        "primary-container": "#4a0e0e",
+                        "on-secondary-fixed-variant": "#474747"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Noto Serif"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .custom-slider {
+            -webkit-appearance: none;
+            width: 100%;
+            height: 2px;
+            background: #dac1bf;
+            outline: none;
+        }
+        .custom-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 12px;
+            height: 12px;
+            background: #4a0e0e;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body antialiased">
+<!-- TopNavBar -->
+<nav class="bg-[#FCF9F3] dark:bg-stone-950 backdrop-blur-md bg-opacity-80 shadow-sm dark:shadow-none fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto">
+<div class="font-noto-serif text-2xl font-normal tracking-tighter text-[#4A0E0E] dark:text-stone-100">Réserve Privée</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#4A0E0E] transition-colors font-noto-serif text-sm tracking-wider uppercase" href="#">Dashboard</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#4A0E0E] transition-colors font-noto-serif text-sm tracking-wider uppercase" href="#">Scanner</a>
+<a class="text-[#4A0E0E] dark:text-[#E2D1C3] font-semibold border-b-2 border-[#4A0E0E] pb-1 font-noto-serif text-sm tracking-wider uppercase" href="#">Adega</a>
+<a class="text-stone-500 dark:text-stone-400 hover:text-[#4A0E0E] transition-colors font-noto-serif text-sm tracking-wider uppercase" href="#">Social</a>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#4A0E0E] cursor-pointer hover:opacity-80 transition-opacity" data-icon="notifications">notifications</span>
+<span class="material-symbols-outlined text-[#4A0E0E] cursor-pointer hover:opacity-80 transition-opacity" data-icon="settings">settings</span>
+</div>
+</div>
+</nav>
+<main class="pt-24 pb-12 px-6 max-w-5xl mx-auto">
+<!-- Header Editorial -->
+<header class="mb-12 space-y-2">
+<h1 class="font-headline text-5xl md:text-6xl text-primary-container tracking-tight">Diário de Degustação</h1>
+<p class="font-body text-secondary text-lg max-w-xl">Registre as nuances sensoriais e eternize a memória de cada garrafa aberta em sua coleção particular.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Image & Global Rating (Bento Style) -->
+<div class="lg:col-span-4 space-y-6">
+<div class="bg-surface-container-low rounded-xl overflow-hidden shadow-sm relative group">
+<img alt="Vinho" class="w-full aspect-[3/4] object-cover transition-transform duration-700 group-hover:scale-105" data-alt="close-up of a premium wine bottle on a dark wooden table with soft warm side lighting reflecting on the glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTHMY7tJ79vpzArKzZ1bV0SypZFElQpC9BSPus7znhAKc8mkoPHGZbFASU13WpRH9Yw9EHBm8DU0J6XmdGiXB7v44rblO-jfNF642otBImd6wNbrkahtTeQzGGfmyEyi0Hf1Jn6vConsXVIEoZjj4m-eeZWABe69xv-Cce3J4ccLAKVy30kLaKrz2BWzvsVQXOIkUvyKTrbFQ-xFxGmBewAVjk_OxkGo811sKJC7N0JF9EFvtzew2GI3jaGPHdJAuimPvYYg1yOwQn"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary-container/60 to-transparent"></div>
+<div class="absolute bottom-6 left-6 text-white">
+<p class="font-headline text-2xl">Château Margaux</p>
+<p class="font-label text-sm opacity-80 uppercase tracking-widest">Safra 2015</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<label class="font-label text-xs uppercase tracking-widest text-secondary block mb-4">Nota Global</label>
+<div class="flex gap-2 text-primary-container">
+<span class="material-symbols-outlined text-3xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-3xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-3xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-3xl" data-icon="star" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-3xl" data-icon="star_half" style="font-variation-settings: 'FILL' 1;">star_half</span>
+</div>
+<p class="mt-4 text-sm text-secondary italic">"Um exemplar excepcional, complexo e com grande potencial de guarda."</p>
+</div>
+</div>
+<!-- Right Column: Detailed Evaluation -->
+<div class="lg:col-span-8 space-y-8">
+<!-- Aparência Section -->
+<section class="bg-surface-container-low p-8 rounded-xl">
+<h3 class="font-headline text-xl mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="visibility">visibility</span>
+                        Aparência
+                    </h3>
+<div class="flex flex-wrap gap-4">
+<button class="px-6 py-2 rounded-full border border-outline-variant text-sm font-medium hover:bg-primary-container hover:text-white transition-all flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#800020]"></span> Rubi Profundo
+                        </button>
+<button class="px-6 py-2 rounded-full bg-primary-container text-white shadow-lg text-sm font-medium flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#670001]"></span> Granada
+                        </button>
+<button class="px-6 py-2 rounded-full border border-outline-variant text-sm font-medium hover:bg-primary-container hover:text-white transition-all flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-[#4B0082]"></span> Púrpura
+                        </button>
+</div>
+</section>
+<!-- Perfil Aromático (Roda de Aromas Simplificada) -->
+<section class="bg-surface-container-low p-8 rounded-xl">
+<h3 class="font-headline text-xl mb-6 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="air">air</span>
+                        Perfil Aromático
+                    </h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label text-xs uppercase tracking-wider">Frutas</span>
+<span class="text-xs text-primary-container font-bold">80%</span>
+</div>
+<div class="h-1.5 w-full bg-outline-variant/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[80%] rounded-full"></div>
+</div>
+<p class="text-xs text-secondary">Cereja negra, ameixa madura</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label text-xs uppercase tracking-wider">Flores</span>
+<span class="text-xs text-primary-container font-bold">40%</span>
+</div>
+<div class="h-1.5 w-full bg-outline-variant/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[40%] rounded-full"></div>
+</div>
+<p class="text-xs text-secondary">Violetas, pétalas secas</p>
+</div>
+<div class="space-y-3">
+<div class="flex justify-between items-center">
+<span class="font-label text-xs uppercase tracking-wider">Especiarias</span>
+<span class="text-xs text-primary-container font-bold">65%</span>
+</div>
+<div class="h-1.5 w-full bg-outline-variant/20 rounded-full overflow-hidden">
+<div class="h-full bg-primary-container w-[65%] rounded-full"></div>
+</div>
+<p class="text-xs text-secondary">Baunilha, cravo, tabaco</p>
+</div>
+</div>
+</section>
+<!-- Estrutura do Paladar -->
+<section class="bg-surface-container-lowest p-8 rounded-xl border border-outline-variant/15 shadow-sm">
+<h3 class="font-headline text-xl mb-8 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="restaurant">restaurant</span>
+                        Estrutura do Paladar
+                    </h3>
+<div class="space-y-10">
+<div class="space-y-4">
+<div class="flex justify-between">
+<label class="font-label text-sm">Taninos</label>
+<span class="text-xs font-bold text-primary-container uppercase">Seda / Firme</span>
+</div>
+<input class="custom-slider" max="100" min="0" type="range" value="75"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between">
+<label class="font-label text-sm">Corpo</label>
+<span class="text-xs font-bold text-primary-container uppercase">Encorpado</span>
+</div>
+<input class="custom-slider" max="100" min="0" type="range" value="85"/>
+</div>
+<div class="space-y-4">
+<div class="flex justify-between">
+<label class="font-label text-sm">Acidez</label>
+<span class="text-xs font-bold text-primary-container uppercase">Equilibrada</span>
+</div>
+<input class="custom-slider" max="100" min="0" type="range" value="60"/>
+</div>
+</div>
+</section>
+<!-- Notas Pessoais -->
+<section class="bg-surface-container-low p-8 rounded-xl">
+<label class="font-headline text-xl mb-4 block flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container" data-icon="edit_note">edit_note</span>
+                        Notas Pessoais
+                    </label>
+<textarea class="w-full bg-transparent border-b border-outline-variant/30 focus:border-primary-container focus:ring-0 transition-all resize-none font-body py-2 placeholder:text-stone-400" placeholder="Descreva sua experiência, harmonização ou momentos especiais desta degustação..." rows="4"></textarea>
+</section>
+<!-- Action Button -->
+<div class="flex justify-end pt-4">
+<button class="bg-gradient-to-br from-primary-container to-primary text-on-primary px-12 py-4 rounded-md font-label text-sm tracking-widest uppercase flex items-center gap-4 group hover:shadow-2xl hover:scale-[1.02] transition-all">
+                        Arquivar Avaliação
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1" data-icon="inventory_2">inventory_2</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- SideNavBar (Simulated for Navigation logic) -->
+<aside class="hidden xl:flex flex-col h-screen w-64 bg-[#FCF9F3] dark:bg-stone-900 border-r border-stone-200/20 fixed left-0 top-0 py-6 px-4 z-40">
+<div class="mb-10 px-2">
+<h2 class="font-noto-serif text-xl text-[#4A0E0E]">Réserve Privée</h2>
+<p class="font-manrope text-xs text-stone-500 uppercase tracking-widest mt-1">Curadoria de Herança</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-stone-600 hover:bg-stone-100 rounded-md transition-all font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span> Painel
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-600 hover:bg-stone-100 rounded-md transition-all font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="qr_code_scanner">qr_code_scanner</span> Scanner
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-600 hover:bg-stone-100 rounded-md transition-all font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="wine_bar">wine_bar</span> Minha Adega
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#4A0E0E] text-white rounded-md shadow-lg font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note" style="font-variation-settings: 'FILL' 1;">edit_note</span> Notas
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-stone-600 hover:bg-stone-100 rounded-md transition-all font-manrope text-sm font-medium" href="#">
+<span class="material-symbols-outlined" data-icon="groups">groups</span> Comunidade
+            </a>
+</nav>
+<button class="mt-auto bg-primary-container text-white p-4 rounded-lg flex items-center justify-center gap-2 font-label text-xs uppercase tracking-tighter hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span> Adicionar Novo Vinho
+        </button>
+</aside>
+<!-- BottomNavBar for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 right-0 bg-[#FCF9F3]/90 backdrop-blur-xl border-t border-outline-variant/10 px-6 py-4 flex justify-between items-center z-50">
+<span class="material-symbols-outlined text-stone-400" data-icon="dashboard">dashboard</span>
+<span class="material-symbols-outlined text-stone-400" data-icon="qr_code_scanner">qr_code_scanner</span>
+<div class="bg-primary-container text-white p-3 rounded-full -mt-10 shadow-xl">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+</div>
+<span class="material-symbols-outlined text-primary-container" data-icon="edit_note" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+<span class="material-symbols-outlined text-stone-400" data-icon="person">person</span>
+</nav>
+</body></html>
