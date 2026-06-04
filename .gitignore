@@ -5,3 +5,6 @@
 
 design-system
 old
+/backend/bff/.idea
+/backend/bff/docs
+/backend/bff/target
