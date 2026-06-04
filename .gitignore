@@ -20,3 +20,4 @@ old
 /backend/svc-gamificacao/.mvn
 /backend/svc-notificacao/.mvn
 /backend/svc-analytics/.mvn
+frontend/shell/package-lock.json
