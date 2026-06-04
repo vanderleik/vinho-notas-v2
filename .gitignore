@@ -9,3 +9,5 @@ old
 /backend/bff/docs
 /backend/bff/target
 /backend/svc-autenticacao/.mvn
+
+/backend/.idea
