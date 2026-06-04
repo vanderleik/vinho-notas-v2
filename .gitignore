@@ -28,3 +28,4 @@ frontend/mfe-sommelier/package-lock.json
 frontend/mfe-dashboard/package-lock.json
 frontend/mfe-perfil/package-lock.json
 frontend/shared-auth/package-lock.json
+frontend/shared-state/package-lock.json
