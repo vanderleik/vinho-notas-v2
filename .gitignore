@@ -24,3 +24,4 @@ frontend/shell/package-lock.json
 frontend/mfe-autenticacao/package-lock.json
 frontend/mfe-vinhos/package-lock.json
 frontend/mfe-degustacao/package-lock.json
+frontend/mfe-sommelier/package-lock.json
